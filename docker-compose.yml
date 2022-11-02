@@ -1,0 +1,68 @@
+version: "3.7"
+
+# TODO: password protect mqtt
+services:
+  home-assistant:
+    image: homeassistant/home-assistant:2022.10
+    container_name: homeAssistantCore
+    restart: unless-stopped
+    volumes:
+      - homeAssistantData:/config
+      - ./homeAssistantCore/configuration.yaml:/config/configuration.yaml
+      - ./homeAssistantCore/secrets.yaml:/config/secrets.yaml
+      - ./homeAssistantCore/custom-config/:/config/custom-config/
+    environment:
+      TZ: Europe/Berlin
+      DB_CONNECTION: postgresql://${POSTGRES_USER-homeAssistantCore}:${POSTGRES_PASSWORD:?Missing environment variable see readme}@postgres:5432/${POSTGRES_DB-homeAssistantCore}
+
+    ports:
+      - 8123:8123
+    depends_on:
+      - eclipse-mosquitto
+      - zigbee2mqtt
+      - postgres
+
+  eclipse-mosquitto:
+    image: eclipse-mosquitto:2.0
+    container_name: homeAssistantEclipseMosquitto
+    restart: unless-stopped
+    volumes:
+      - eclipseMosquittoData:/mosquitto/data
+      - ./mosquitto/config/:/mosquitto/config/:ro # readonly because mosquitto likes to play with permissions
+
+  zigbee2mqtt:
+    image: koenkk/zigbee2mqtt:1.28.0
+    container_name: homeAssistantZigbee2mqtt
+    restart: unless-stopped
+    volumes:
+      - zigbee2mqttData:/app/data
+      - /run/udev:/run/udev:ro
+      - ./zigbee2mqt/config/configuration.yaml:/app/data/configuration.yaml
+    ports:
+      - 8124:8080
+    environment:
+      TZ: Europe/Berlin
+    devices:
+      - ${USB_DEVICE-/dev/ttyACM0}:/dev/ttyACM0
+    depends_on:
+      - eclipse-mosquitto
+
+  postgres:
+    image: postgres:14.2-alpine
+    container_name: homeAssistantPostgresql
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER-homeAssistantCore}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Missing environment variable see readme}
+      POSTGRES_DB: ${POSTGRES_DB-homeAssistantCore}
+    volumes:
+      - postgresqlData:/var/lib/postgresql/data
+
+volumes:
+  homeAssistantData:
+    driver: local
+  eclipseMosquittoData:
+    driver: local
+  zigbee2mqttData:
+    driver: local
+  postgresqlData:
+    driver: local

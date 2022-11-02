@@ -1,0 +1,41 @@
+title: Temperature
+views:
+  - path: default_view
+    title: Temperature
+    cards:
+      - square: false
+        columns: 1
+        type: grid
+        cards:
+          - type: thermostat
+            entity: climate.schlafzimmer
+          - hours_to_show: 24
+            graph: line
+            type: sensor
+            entity: sensor.schlafzimmer_thermostat_temperature
+            detail: 1
+            name: Schlafzimmer Temperatur
+          - hours_to_show: 24
+            graph: line
+            type: sensor
+            entity: sensor.schlafzimmer_thermostat_humidity
+            detail: 1
+            name: Schlafzimmer Luftfeuchtigkeit
+      - square: false
+        columns: 1
+        type: grid
+        cards:
+          - type: thermostat
+            entity: climate.wohnzimmer
+          - hours_to_show: 24
+            graph: line
+            type: sensor
+            entity: sensor.wohnzimmer_thermostat_temperature
+            detail: 1
+            name: Wohnzimmer Temperatur
+          - hours_to_show: 24
+            graph: line
+            type: sensor
+            entity: sensor.wohnzimmer_thermostat_humidity
+            detail: 1
+            name: Wohnzimmer Luftfeuchtigkeit

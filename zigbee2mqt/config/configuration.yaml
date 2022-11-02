@@ -1,0 +1,16 @@
+homeassistant: true
+frontend: true
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://eclipse-mosquitto
+serial:
+  port: /dev/ttyACM0
+devices:
+  '0x00124b00251394b8':
+    friendly_name: Wohnzimmer Thermostat
+  '0xc4988600000f774f':
+    friendly_name: Wohnzimmer Heizung
+  '0x00124b002512fbaf':
+    friendly_name: Schlafzimmer Thermostat
+  '0xc4988600000f9b7b':
+    friendly_name: Schlafzimmer Heizung

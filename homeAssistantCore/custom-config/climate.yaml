@@ -1,0 +1,8 @@
+- platform: generic_thermostat
+  name: Wohnzimmer
+  heater: switch.wohnzimmer_heizung
+  target_sensor: sensor.wohnzimmer_thermostat_temperature
+- platform: generic_thermostat
+  name: Schlafzimmer
+  heater: switch.schlafzimmer_heizung
+  target_sensor: sensor.schlafzimmer_thermostat_temperature
