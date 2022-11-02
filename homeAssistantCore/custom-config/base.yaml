@@ -14,3 +14,5 @@ recorder: !include recorder.yaml
 lovelace: !include lovelace.yaml
 
 climate: !include climate.yaml
+
+panel_iframe: !include panel_iframe.yaml

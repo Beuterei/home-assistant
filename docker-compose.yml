@@ -2,25 +2,15 @@ version: "3.7"
 
 # TODO: password protect mqtt
 services:
-  home-assistant:
-    image: homeassistant/home-assistant:2022.10
-    container_name: homeAssistantCore
-    restart: unless-stopped
-    volumes:
-      - homeAssistantData:/config
-      - ./homeAssistantCore/configuration.yaml:/config/configuration.yaml
-      - ./homeAssistantCore/secrets.yaml:/config/secrets.yaml
-      - ./homeAssistantCore/custom-config/:/config/custom-config/
+  postgres:
+    image: postgres:14.2-alpine
+    container_name: homeAssistantPostgresql
     environment:
-      TZ: Europe/Berlin
-      DB_CONNECTION: postgresql://${POSTGRES_USER-homeAssistantCore}:${POSTGRES_PASSWORD:?Missing environment variable see readme}@postgres:5432/${POSTGRES_DB-homeAssistantCore}
-
-    ports:
-      - 8123:8123
-    depends_on:
-      - eclipse-mosquitto
-      - zigbee2mqtt
-      - postgres
+      POSTGRES_USER: ${POSTGRES_USER-homeAssistantCore}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Missing environment variable see readme}
+      POSTGRES_DB: ${POSTGRES_DB-homeAssistantCore}
+    volumes:
+      - postgresqlData:/var/lib/postgresql/data
 
   eclipse-mosquitto:
     image: eclipse-mosquitto:2.0
@@ -47,22 +37,31 @@ services:
     depends_on:
       - eclipse-mosquitto
 
-  postgres:
-    image: postgres:14.2-alpine
-    container_name: homeAssistantPostgresql
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER-homeAssistantCore}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Missing environment variable see readme}
-      POSTGRES_DB: ${POSTGRES_DB-homeAssistantCore}
+  home-assistant:
+    image: homeassistant/home-assistant:2022.10
+    container_name: homeAssistantCore
+    restart: unless-stopped
     volumes:
-      - postgresqlData:/var/lib/postgresql/data
+      - homeAssistantData:/config
+      - ./homeAssistantCore/configuration.yaml:/config/configuration.yaml
+      - ./homeAssistantCore/secrets.yaml:/config/secrets.yaml
+      - ./homeAssistantCore/custom-config/:/config/custom-config/
+    environment:
+      TZ: Europe/Berlin
+      DB_CONNECTION: postgresql://${POSTGRES_USER-homeAssistantCore}:${POSTGRES_PASSWORD:?Missing environment variable see readme}@postgres:5432/${POSTGRES_DB-homeAssistantCore}
+    ports:
+      - 8123:8123
+    depends_on:
+      - eclipse-mosquitto
+      - zigbee2mqtt
+      - postgres
 
 volumes:
-  homeAssistantData:
+  postgresqlData:
     driver: local
   eclipseMosquittoData:
     driver: local
   zigbee2mqttData:
     driver: local
-  postgresqlData:
+  homeAssistantData:
     driver: local
