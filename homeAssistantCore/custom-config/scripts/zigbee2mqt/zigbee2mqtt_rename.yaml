@@ -1,11 +1,21 @@
 alias: Zigbee2MQTT Rename
 icon: mdi:rename-box
 sequence:
-  service: mqtt.publish
-  data_template:
-    topic: zigbee2mqtt/bridge/request/device/rename
-    payload_template: >-
-      {
-        "from": "{{ states.input_text.zigbee2mqtt_old_name.state | string }}",
-        "to": "{{ states.input_text.zigbee2mqtt_new_name.state | string }}"
-      }
+  - service: mqtt.publish
+    data_template:
+      topic: zigbee2mqtt/bridge/request/device/rename
+      payload_template: >-
+        {
+          "from": "{{ states.input_text.zigbee2mqtt_old_name.state | string }}",
+          "to": "{{ states.input_text.zigbee2mqtt_new_name.state | string }}"
+        }
+  - service: input_text.set_value
+    data:
+      value: ''
+    target:
+      entity_id: input_text.zigbee2mqtt_old_name
+  - service: input_text.set_value
+    data:
+      value: ''
+    target:
+      entity_id: input_text.zigbee2mqtt_new_name

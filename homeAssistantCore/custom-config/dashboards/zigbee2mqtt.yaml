@@ -23,6 +23,5 @@ views:
         show_state: true
         type: glance
         entities:
-          - sensor.wohnzimmer_audio_input_format
           - sensor.zigbee2mqtt_bridge_state
           - sensor.zigbee2mqtt_version

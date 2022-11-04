@@ -19,6 +19,7 @@ climate: !include climate.yaml
 
 # TODO: add auth to zigbee2mqtt fe
 # TODO: add person config
+# TODO: write comments
 
 automation: !include_dir_list automations/
 
