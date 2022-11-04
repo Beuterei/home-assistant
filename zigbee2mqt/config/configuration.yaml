@@ -14,3 +14,7 @@ devices:
     friendly_name: Bedroom Thermostat
   '0xc4988600000f9b7b':
     friendly_name: Bedroom Heater
+  '0x001788010bb3f847':
+    friendly_name: Workbench
+  '0x0000000001739bb6':
+    friendly_name: Living Room Switch

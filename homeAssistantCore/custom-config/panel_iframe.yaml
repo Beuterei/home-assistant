@@ -1,5 +1,0 @@
-zigbee2mqtt:
-  title: "Zigbee2mqtt"
-  url: "http://192.168.1.13:8124"
-  icon: mdi:zigbee
-  require_admin: true

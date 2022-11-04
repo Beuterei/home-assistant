@@ -3,9 +3,7 @@ views:
   - path: default_view
     title: Temperature
     cards:
-      - square: false
-        columns: 1
-        type: grid
+      - type: vertical-stack
         cards:
           - type: thermostat
             entity: climate.bedroom
@@ -21,9 +19,7 @@ views:
             entity: sensor.bedroom_thermostat_humidity
             detail: 1
             name: Bedroom humidity
-      - square: false
-        columns: 1
-        type: grid
+      - type: vertical-stack
         cards:
           - type: thermostat
             entity: climate.living_room

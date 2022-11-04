@@ -30,26 +30,24 @@ This is my personal home assistant setup so it probably won't have much use for 
 
 1. Follow [Customization](#customization)
 
-2. Create a secret file at `homeAssistantCore/secrets.yaml` add all secrets from [Secrets](#secrets) according to [Storing secrets](https://www.home-assistant.io/docs/configuration/secrets/)
+2. Configure home assistant
 
-3. Configure home assistant
-
-4. Configure MQTT with:
+3. Configure MQTT with:
 
    | Variable | Value               |
    | -------- | ------------------- |
    | `Broker` | `eclipse-mosquitto` |
    | `Port`   | `1883`              |
 
-5. Open Zigbee2mqtt dashboard on port `8124` and rejoin all devices listed in [configuration.yaml](zigbee2mqt/config/configuration.yaml)
+4. Open Zigbee2mqtt dashboard on port `8124` and rejoin all devices listed in [configuration.yaml](zigbee2mqt/config/configuration.yaml)
 
-6. Add all `ESP Home` intregrations listed [here](https://github.com/beuluis/esp-home#projects). The hostname is the project name
+5. Add all `ESP Home` intregrations listed [here](https://github.com/beuluis/esp-home#projects). The hostname is the project name
 
-7. Add all desired autodiscovered integrations
+6. Add all desired autodiscovered integrations
 
-8. Add all devices to areas
+7. Add all devices to areas
 
-9. Restart that `homeassistant` configurations take effect
+8. Restart that `homeassistant` configurations take effect
 
 ## Customization
 
@@ -61,25 +59,19 @@ touch .env
 
 2. Overwrite variables as you like (format: `{variable name}={variable value}`)
 
-| Variable             | Description                                            | Default value       | Required |
-| -------------------- | ------------------------------------------------------ | ------------------- | -------- |
-| `POSTGRES_USER`      | Postgres user                                          | `homeAssistantCore` | false    |
-| `POSTGRES_PASSWORD`  | Postgres password                                      | none                | true     |
-| `POSTGRES_DB`        | Postgres DB name                                       | `homeAssistantCore` | false    |
-| `ZIGBEE_USB_DEVICE`  | USB Zigbee dongle                                      | `/dev/ttyACM0`      | false    |
-| `HOME_ASSISTANT_IP`  | Ip of the home assistant instance matching to `SUBNET` | none                | true     |
-| `MDNS_REFLECTOR_IP`  | Ip of the mDNS reflector matching to `SUBNET`          | none                | true     |
-| `LAN_NETWORK_DEVICE` | Network device to use for macvlan driver               | none                | true     |
-| `SUBNET`             | Subnet for host network                                | none                | true     |
-
-## Secrets
-
-To configure secrets
-
-| Name        | Description                                                    |
-| ----------- | -------------------------------------------------------------- |
-| `latitude`  | [See](https://www.home-assistant.io/docs/configuration/basic/) |
-| `longitude` | [See](https://www.home-assistant.io/docs/configuration/basic/) |
+| Variable             | Description                                                                                                                                        | Default value       | Required |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------- |
+| `POSTGRES_USER`      | Postgres user                                                                                                                                      | `homeAssistantCore` | false    |
+| `POSTGRES_PASSWORD`  | Postgres password                                                                                                                                  | none                | true     |
+| `POSTGRES_DB`        | Postgres DB name                                                                                                                                   | `homeAssistantCore` | false    |
+| `ZIGBEE_USB_DEVICE`  | USB Zigbee dongle                                                                                                                                  | `/dev/ttyACM0`      | false    |
+| `HOME_ASSISTANT_IP`  | Ip of the home assistant instance matching to `SUBNET`                                                                                             | none                | true     |
+| `MDNS_REFLECTOR_IP`  | Ip of the mDNS reflector matching to `SUBNET`                                                                                                      | none                | true     |
+| `LAN_NETWORK_DEVICE` | Network device to use for macvlan driver                                                                                                           | none                | true     |
+| `SUBNET`             | Subnet for host network                                                                                                                            | none                | true     |
+| `ZIGBEE_KEY`         | See [Change Zigbee network encryption key](https://www.zigbee2mqtt.io/advanced/zigbee/03_secure_network.html#change-zigbee-network-encryption-key) | none                | true     |
+| `LATITUDE`           | [See](https://www.home-assistant.io/docs/configuration/basic/)                                                                                     | none                | true     |
+| `LONGITUDE`          | [See](https://www.home-assistant.io/docs/configuration/basic/)                                                                                     | none                | true     |
 
 <!-- CONTRIBUTING -->
 

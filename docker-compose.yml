@@ -36,6 +36,7 @@ services:
       - 8124:8080
     environment:
       TZ: Europe/Berlin
+      ZIGBEE2MQTT_CONFIG_ADVANCED_KEY: ${ZIGBEE_KEY:?Missing environment variable see readme}
     devices:
       - ${ZIGBEE_USB_DEVICE-/dev/ttyACM0}:/dev/ttyACM0
     depends_on:
@@ -50,11 +51,12 @@ services:
     volumes:
       - homeAssistantData:/config
       - ./homeAssistantCore/configuration.yaml:/config/configuration.yaml
-      - ./homeAssistantCore/secrets.yaml:/config/secrets.yaml
       - ./homeAssistantCore/custom-config/:/config/custom-config/
     environment:
       TZ: Europe/Berlin
       DB_CONNECTION: postgresql://${POSTGRES_USER-homeAssistantCore}:${POSTGRES_PASSWORD:?Missing environment variable see readme}@postgres:5432/${POSTGRES_DB-homeAssistantCore}
+      LATITUDE: ${LATITUDE:?Missing environment variable see readme}
+      LONGITUDE: ${LONGITUDE:?Missing environment variable see readme}
     ports:
       - 8123:8123
     networks:
@@ -68,7 +70,7 @@ services:
 
   mdns-reflector:
     image: flungo/avahi:v0.6.32
-    container_name: mDNSReflector
+    container_name: homeAssistantMDNSReflector
     environment:
       REFLECTOR_ENABLE_REFLECTOR: 'true'
     restart: unless-stopped

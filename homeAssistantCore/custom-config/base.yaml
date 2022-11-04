@@ -1,7 +1,7 @@
 homeassistant:
   name: Home
-  latitude: !secret latitude
-  longitude: !secret longitude
+  latitude: !env_var LATITUDE
+  longitude: !env_var LONGITUDE
   unit_system: metric
   time_zone: Europe/Berlin
   currency: EUR
@@ -17,4 +17,15 @@ lovelace: !include lovelace.yaml
 
 climate: !include climate.yaml
 
-panel_iframe: !include panel_iframe.yaml
+# TODO: add auth to zigbee2mqtt fe
+# TODO: add person config
+
+automation: !include_dir_list automations/
+
+script: !include_dir_named scripts/
+
+input_number: !include_dir_named inputs/numbers/
+
+input_text: !include_dir_named inputs/texts/
+
+timer: !include_dir_named timers/
