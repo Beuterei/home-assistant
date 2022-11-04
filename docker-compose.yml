@@ -11,6 +11,8 @@ services:
       POSTGRES_DB: ${POSTGRES_DB-homeAssistantCore}
     volumes:
       - postgresqlData:/var/lib/postgresql/data
+    networks:
+      - homeassistant
 
   eclipse-mosquitto:
     image: eclipse-mosquitto:2.0
@@ -19,6 +21,8 @@ services:
     volumes:
       - eclipseMosquittoData:/mosquitto/data
       - ./mosquitto/config/:/mosquitto/config/:ro # readonly because mosquitto likes to play with permissions
+    networks:
+      - homeassistant
 
   zigbee2mqtt:
     image: koenkk/zigbee2mqtt:1.28.0
@@ -33,9 +37,11 @@ services:
     environment:
       TZ: Europe/Berlin
     devices:
-      - ${USB_DEVICE-/dev/ttyACM0}:/dev/ttyACM0
+      - ${ZIGBEE_USB_DEVICE-/dev/ttyACM0}:/dev/ttyACM0
     depends_on:
       - eclipse-mosquitto
+    networks:
+      - homeassistant
 
   home-assistant:
     image: homeassistant/home-assistant:2022.10
@@ -51,10 +57,25 @@ services:
       DB_CONNECTION: postgresql://${POSTGRES_USER-homeAssistantCore}:${POSTGRES_PASSWORD:?Missing environment variable see readme}@postgres:5432/${POSTGRES_DB-homeAssistantCore}
     ports:
       - 8123:8123
+    networks:
+      homeassistant:
+      dockervlan:
+        ipv4_address: ${HOME_ASSISTANT_IP:?Missing environment variable see readme}
     depends_on:
       - eclipse-mosquitto
       - zigbee2mqtt
       - postgres
+
+  mdns-reflector:
+    image: flungo/avahi:v0.6.32
+    container_name: mDNSReflector
+    environment:
+      REFLECTOR_ENABLE_REFLECTOR: 'true'
+    restart: unless-stopped
+    networks:
+      homeassistant:
+      dockervlan:
+        ipv4_address: ${MDNS_REFLECTOR_IP:?Missing environment variable see readme}
 
 volumes:
   postgresqlData:
@@ -65,3 +86,15 @@ volumes:
     driver: local
   homeAssistantData:
     driver: local
+
+networks:
+  homeassistant:
+    name: homeassistant
+  dockervlan:
+    name: dockervlan
+    driver: macvlan
+    driver_opts:
+      parent: ${LAN_NETWORK_DEVICE:?Missing environment variable see readme}
+    ipam:
+      config:
+        - subnet: ${SUBNET:?Missing environment variable see readme}

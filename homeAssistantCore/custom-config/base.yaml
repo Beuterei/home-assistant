@@ -4,6 +4,8 @@ homeassistant:
   longitude: !secret longitude
   unit_system: metric
   time_zone: Europe/Berlin
+  currency: EUR
+  elevation: 532
 
 default_config:
 

@@ -8,34 +8,34 @@ views:
         type: grid
         cards:
           - type: thermostat
-            entity: climate.schlafzimmer
+            entity: climate.bedroom
           - hours_to_show: 24
             graph: line
             type: sensor
-            entity: sensor.schlafzimmer_thermostat_temperature
+            entity: sensor.bedroom_thermostat_temperature
             detail: 1
-            name: Schlafzimmer Temperatur
+            name: Bedroom Temperatur
           - hours_to_show: 24
             graph: line
             type: sensor
-            entity: sensor.schlafzimmer_thermostat_humidity
+            entity: sensor.bedroom_thermostat_humidity
             detail: 1
-            name: Schlafzimmer Luftfeuchtigkeit
+            name: Bedroom humidity
       - square: false
         columns: 1
         type: grid
         cards:
           - type: thermostat
-            entity: climate.wohnzimmer
+            entity: climate.living_room
           - hours_to_show: 24
             graph: line
             type: sensor
-            entity: sensor.wohnzimmer_thermostat_temperature
+            entity: sensor.living_room_thermostat_temperature
             detail: 1
-            name: Wohnzimmer Temperatur
+            name: Living Room Temperatur
           - hours_to_show: 24
             graph: line
             type: sensor
-            entity: sensor.wohnzimmer_thermostat_humidity
+            entity: sensor.living_room_thermostat_humidity
             detail: 1
-            name: Wohnzimmer Luftfeuchtigkeit
+            name: Living Room humidity

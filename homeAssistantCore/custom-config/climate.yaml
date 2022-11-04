@@ -1,8 +1,10 @@
 - platform: generic_thermostat
-  name: Wohnzimmer
-  heater: switch.wohnzimmer_heizung
-  target_sensor: sensor.wohnzimmer_thermostat_temperature
+  name: Living Room
+  heater: switch.living_room_heater
+  target_sensor: sensor.living_room_thermostat_temperature
+  target_temp: 22
 - platform: generic_thermostat
-  name: Schlafzimmer
-  heater: switch.schlafzimmer_heizung
-  target_sensor: sensor.schlafzimmer_thermostat_temperature
+  name: Bedroom
+  heater: switch.bedroom_heater
+  target_sensor: sensor.bedroom_thermostat_temperature
+  target_temp: 22
