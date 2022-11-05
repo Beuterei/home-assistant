@@ -61,20 +61,21 @@ touch .env
 
 2. Overwrite variables as you like (format: `{variable name}={variable value}`)
 
-| Variable             | Description                                                                                                                                        | Default value       | Required |
-| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------- |
-| `POSTGRES_USER`      | Postgres user                                                                                                                                      | `homeAssistantCore` | false    |
-| `POSTGRES_PASSWORD`  | Postgres password                                                                                                                                  | none                | true     |
-| `POSTGRES_DB`        | Postgres DB name                                                                                                                                   | `homeAssistantCore` | false    |
-| `ZIGBEE_USB_DEVICE`  | USB Zigbee dongle                                                                                                                                  | `/dev/ttyACM0`      | false    |
-| `HOME_ASSISTANT_IP`  | Ip of the home assistant instance matching to `SUBNET`                                                                                             | none                | true     |
-| `MDNS_REFLECTOR_IP`  | Ip of the mDNS reflector matching to `SUBNET`                                                                                                      | none                | true     |
-| `LAN_NETWORK_DEVICE` | Network device to use for macvlan driver                                                                                                           | none                | true     |
-| `SUBNET`             | Subnet for host network                                                                                                                            | none                | true     |
-| `ZIGBEE_KEY`         | See [Change Zigbee network encryption key](https://www.zigbee2mqtt.io/advanced/zigbee/03_secure_network.html#change-zigbee-network-encryption-key) | none                | true     |
-| `LATITUDE`           | [See](https://www.home-assistant.io/docs/configuration/basic/)                                                                                     | none                | true     |
-| `LONGITUDE`          | [See](https://www.home-assistant.io/docs/configuration/basic/)                                                                                     | none                | true     |
-| `MOSQUITTO_PASSWORD` | MQTT broker password                                                                                                                               | none                | true     |
+| Variable                 | Description                                                                                                                                                | Default value       | Required |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------- |
+| `POSTGRES_USER`          | Postgres user                                                                                                                                              | `homeAssistantCore` | false    |
+| `POSTGRES_PASSWORD`      | Postgres password                                                                                                                                          | none                | true     |
+| `POSTGRES_DB`            | Postgres DB name                                                                                                                                           | `homeAssistantCore` | false    |
+| `HOME_ASSISTANT_IP`      | Ip of the home assistant instance matching to `SUBNET`                                                                                                     | none                | true     |
+| `MDNS_REFLECTOR_IP`      | Ip of the mDNS reflector matching to `SUBNET`                                                                                                              | none                | true     |
+| `LAN_NETWORK_DEVICE`     | Network device to use for macvlan driver                                                                                                                   | none                | true     |
+| `SUBNET`                 | Subnet for host network                                                                                                                                    | none                | true     |
+| `ZIGBEE_KEY`             | See [Change Zigbee network encryption key](https://www.zigbee2mqtt.io/advanced/zigbee/03_secure_network.html#change-zigbee-network-encryption-key)         | none                | true     |
+| `ZIGBEE2MQTT_AUTH_TOKEN` | Auth token for the Zigbee2MQTT frontend. See [advanced-configuration](https://www.zigbee2mqtt.io/guide/configuration/frontend.html#advanced-configuration) | none                | true     |
+| `ZIGBEE_USB_DEVICE`      | USB Zigbee dongle                                                                                                                                          | `/dev/ttyACM0`      | false    |
+| `LATITUDE`               | [See](https://www.home-assistant.io/docs/configuration/basic/)                                                                                             | none                | true     |
+| `LONGITUDE`              | [See](https://www.home-assistant.io/docs/configuration/basic/)                                                                                             | none                | true     |
+| `MOSQUITTO_PASSWORD`     | MQTT broker password                                                                                                                                       | none                | true     |
 
 <!-- CONTRIBUTING -->
 

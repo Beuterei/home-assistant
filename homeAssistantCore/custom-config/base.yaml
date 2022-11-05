@@ -17,7 +17,6 @@ lovelace: !include lovelace.yaml
 
 climate: !include climate.yaml
 
-# TODO: add auth to zigbee2mqtt fe
 # TODO: add person config
 # TODO: write comments
 

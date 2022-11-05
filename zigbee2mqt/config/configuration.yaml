@@ -1,5 +1,4 @@
 homeassistant: true
-frontend: true
 mqtt:
   user: mqtt
   base_topic: zigbee2mqtt
