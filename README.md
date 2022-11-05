@@ -32,7 +32,9 @@ This is my personal home assistant setup so it probably won't have much use for 
 
 2. Configure home assistant
 
-3. Configure MQTT with:
+3. Enable advanced mode under profile settings
+
+4. Configure MQTT with:
 
    | Variable   | Value                                                                  |
    | ---------- | ---------------------------------------------------------------------- |
@@ -41,17 +43,49 @@ This is my personal home assistant setup so it probably won't have much use for 
    | `Username` | `mqtt`                                                                 |
    | `Password` | Use value of `MOSQUITTO_PASSWORD` from [Customization](#customization) |
 
-4. Open Zigbee2mqtt dashboard on port `8124` and rejoin all devices listed in [configuration.yaml](zigbee2mqt/config/configuration.yaml)
+5. Open Zigbee2mqtt dashboard on port `8124` and rejoin all devices listed in [configuration.yaml](zigbee2mqt/config/configuration.yaml)
 
-5. Add all `ESP Home` intregrations listed [here](https://github.com/beuluis/esp-home#projects). The hostname is the project name
+6. Add all `ESP Home` intregrations listed [here](https://github.com/beuluis/esp-home#projects). The hostname is the project name
 
-6. Add all desired autodiscovered integrations
+7. Add all desired autodiscovered integrations:
 
-7. Add all devices to areas
+- Gogle Cast
 
-8. Restart that `homeassistant` configurations take effect
+- Mobile App
 
-9. Configure persons to your liking
+- OctoPrint
+
+- Sonos
+
+- CO2 Signal
+
+  | Variable       | Value                             |
+  | -------------- | --------------------------------- |
+  | `Access Token` | [See](https://www.co2signal.com/) |
+  | `...`          | Defaults                          |
+
+- UniFi Networks
+
+  | Variable                                   | Value    |
+  | ------------------------------------------ | -------- |
+  | `Track network clients`                    | `true`   |
+  | `Include wired network clients`            | `false`  |
+  | `Track network devices (Ubiquiti devices)` | `false`  |
+  | `...`                                      | Defaults |
+
+8. Add all devices to areas
+
+9. Restart that `homeassistant` configurations take effect
+
+10. Configure persons to your liking:
+
+- Profile picture
+
+- Device tracking
+
+  - `device_tracker.oneplus_a5000`
+
+  - `device_tracker.oneplus5`
 
 ## Customization
 

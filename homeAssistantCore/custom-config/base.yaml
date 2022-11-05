@@ -11,6 +11,8 @@ default_config:
 
 mqtt: !include mqtt.yaml
 
+sensor: !include_dir_list sensors/homeassistant/
+
 recorder: !include recorder.yaml
 
 lovelace: !include lovelace.yaml
