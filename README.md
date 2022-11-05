@@ -34,10 +34,12 @@ This is my personal home assistant setup so it probably won't have much use for 
 
 3. Configure MQTT with:
 
-   | Variable | Value               |
-   | -------- | ------------------- |
-   | `Broker` | `eclipse-mosquitto` |
-   | `Port`   | `1883`              |
+   | Variable   | Value                                                                  |
+   | ---------- | ---------------------------------------------------------------------- |
+   | `Broker`   | `eclipse-mosquitto`                                                    |
+   | `Port`     | `1883`                                                                 |
+   | `Username` | `mqtt`                                                                 |
+   | `Password` | Use value of `MOSQUITTO_PASSWORD` from [Customization](#customization) |
 
 4. Open Zigbee2mqtt dashboard on port `8124` and rejoin all devices listed in [configuration.yaml](zigbee2mqt/config/configuration.yaml)
 
@@ -72,6 +74,7 @@ touch .env
 | `ZIGBEE_KEY`         | See [Change Zigbee network encryption key](https://www.zigbee2mqtt.io/advanced/zigbee/03_secure_network.html#change-zigbee-network-encryption-key) | none                | true     |
 | `LATITUDE`           | [See](https://www.home-assistant.io/docs/configuration/basic/)                                                                                     | none                | true     |
 | `LONGITUDE`          | [See](https://www.home-assistant.io/docs/configuration/basic/)                                                                                     | none                | true     |
+| `MOSQUITTO_PASSWORD` | MQTT broker password                                                                                                                               | none                | true     |
 
 <!-- CONTRIBUTING -->
 
