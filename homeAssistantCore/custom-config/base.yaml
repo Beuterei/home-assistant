@@ -17,7 +17,6 @@ lovelace: !include lovelace.yaml
 
 climate: !include climate.yaml
 
-# TODO: add person config
 # TODO: write comments
 
 automation: !include_dir_list automations/

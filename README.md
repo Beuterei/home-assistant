@@ -51,6 +51,8 @@ This is my personal home assistant setup so it probably won't have much use for 
 
 8. Restart that `homeassistant` configurations take effect
 
+9. Configure persons to your liking
+
 ## Customization
 
 1. Create a `.env` file
