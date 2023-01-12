@@ -20,6 +20,8 @@ lovelace: !include lovelace.yaml
 climate: !include climate.yaml
 
 # TODO: write comments
+# TODO: get rid of sony tv
+# TODO: do sleep as scene
 
 automation: !include_dir_list automations/
 

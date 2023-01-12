@@ -7,14 +7,36 @@ serial:
   port: /dev/ttyACM0
 devices:
   '0x00124b00251394b8':
-    friendly_name: Living Room Thermostat
+    friendly_name: Livingroom Thermostat
   '0xc4988600000f774f':
-    friendly_name: Living Room Heater
+    friendly_name: Livingroom Heater
   '0x00124b002512fbaf':
     friendly_name: Bedroom Thermostat
   '0xc4988600000f9b7b':
     friendly_name: Bedroom Heater
   '0x001788010bb3f847':
-    friendly_name: Workbench
+    friendly_name: Bedroom Workbench Light
   '0x0000000001739bb6':
-    friendly_name: Living Room Switch
+    friendly_name: Livingroom Switch
+  '0x001788010cc3328c':
+    friendly_name: Bedroom Desk Switch
+  '0x00178801067afd51':
+    friendly_name: Livingroom Dining Table Light
+  '0x00178801093da33f':
+    friendly_name: Livingroom Coffee Table Light
+  '0x001788010895078a':
+    friendly_name: Bedroom Workbench Button
+  '0x001788010c0b0a14':
+    friendly_name: Bedroom Light
+  '0x001788010cc3328e':
+    friendly_name: Bedroom Bed Switch
+  '0x001788010cc3328f':
+    friendly_name: Bathroom Switch
+  '0x001788010bb578aa':
+    friendly_name: Bathroom Light
+  '0x001788010cc3328d':
+    friendly_name: Kitchen Switch
+  '0x001788010c01960e':
+    friendly_name: Kitchen Light
+  '0x001788010896d4f7':
+    friendly_name: One Button To Rule Them All

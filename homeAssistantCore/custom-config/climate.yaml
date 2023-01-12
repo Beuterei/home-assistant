@@ -1,10 +1,18 @@
 - platform: generic_thermostat
-  name: Living Room
-  heater: switch.living_room_heater
-  target_sensor: sensor.living_room_thermostat_temperature
-  target_temp: 22
+  name: Livingroom
+  heater: switch.livingroom_heater
+  target_sensor: sensor.livingroom_thermostat_temperature
+  target_temp: 19
+  max_temp: 25
+  away_temp: 18
+  home_temp: 20
+  sleep_temp: 19
 - platform: generic_thermostat
   name: Bedroom
   heater: switch.bedroom_heater
   target_sensor: sensor.bedroom_thermostat_temperature
-  target_temp: 22
+  target_temp: 19
+  max_temp: 25
+  away_temp: 18
+  home_temp: 20
+  sleep_temp: 19

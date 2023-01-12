@@ -1,0 +1,13 @@
+id: going_to_sleep
+alias: Going To Sleep
+trigger:
+  platform: mqtt
+  topic: "zigbee2mqtt/One Button To Rule Them All/action"
+  payload: "press"
+action:
+  - service: light.turn_off
+    entity_id: all
+  - service: climate.set_preset_mode
+    entity_id: all
+    data:
+      preset_mode: "sleep"

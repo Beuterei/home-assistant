@@ -1,4 +1,4 @@
-name: Zigbee2MQTT Bridge state
+name: Zigbee2MQTT Bridge State
 unique_id: zigbee2mqtt_bridge_state
 state_topic: "zigbee2mqtt/bridge/state"
 icon: mdi:router-wireless

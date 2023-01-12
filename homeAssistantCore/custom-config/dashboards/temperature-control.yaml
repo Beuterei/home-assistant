@@ -22,16 +22,16 @@ views:
       - type: vertical-stack
         cards:
           - type: thermostat
-            entity: climate.living_room
+            entity: climate.livingroom
           - hours_to_show: 24
             graph: line
             type: sensor
-            entity: sensor.living_room_thermostat_temperature
+            entity: sensor.livingroom_thermostat_temperature
             detail: 1
-            name: Living Room Temperatur
+            name: Livingroom Temperatur
           - hours_to_show: 24
             graph: line
             type: sensor
-            entity: sensor.living_room_thermostat_humidity
+            entity: sensor.livingroom_thermostat_humidity
             detail: 1
-            name: Living Room humidity
+            name: Livingroom humidity

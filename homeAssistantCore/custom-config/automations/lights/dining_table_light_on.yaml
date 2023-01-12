@@ -1,0 +1,9 @@
+id: dining_table_light_on
+alias: Dining Table Light On
+trigger:
+  platform: mqtt
+  topic: "zigbee2mqtt/Livingroom Switch/action"
+  payload: "press_3"
+action:
+  service: light.turn_on
+  entity_id: light.livingroom_dining_table_light

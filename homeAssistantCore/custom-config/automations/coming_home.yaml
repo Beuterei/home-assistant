@@ -1,0 +1,11 @@
+id: coming_home
+alias: Coming Home
+trigger:
+  platform: state
+  entity_id: person.luis_beu
+  to: "home"
+action:
+  - service: climate.set_preset_mode
+    entity_id: all
+    data:
+      preset_mode: "home"

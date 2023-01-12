@@ -1,0 +1,25 @@
+id: going_out
+alias: Going Out
+trigger:
+  platform: state
+  entity_id: person.luis_beu
+  to: "not_home"
+action:
+  - service: climate.set_preset_mode
+    entity_id: all
+    data:
+      preset_mode: "away"
+  - if:
+      - condition: template
+        value_template: "{{ states.light | selectattr('state', 'eq', 'on') | list | length > 0 }}"
+    then:
+        - service: notify.notify
+          data_template:
+            title: "Lights left on"
+            message: >-
+              The following lights are still on:
+              {% for light in states.light %}
+              {%- if light.state == "on" %}
+                - {{ light.name }}
+              {%- endif %}
+              {% endfor %}

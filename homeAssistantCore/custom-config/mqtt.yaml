@@ -1,4 +1,2 @@
-broker: eclipse-mosquitto
-port: 1883
 sensor: !include_dir_list sensors/mqtt/
-switch: !include_dir_list switchs/mqtt/
+switch: !include_dir_list switches/mqtt/

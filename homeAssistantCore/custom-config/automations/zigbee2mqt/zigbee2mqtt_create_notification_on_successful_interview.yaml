@@ -1,5 +1,5 @@
 id: "zigbee2mqtt_create_notification_on_successful_interview"
-alias: Zigbee Device Joined Notification
+alias: Zigbee2MQTT Device Joined Notification
 trigger:
   platform: mqtt
   topic: 'zigbee2mqtt/bridge/event'

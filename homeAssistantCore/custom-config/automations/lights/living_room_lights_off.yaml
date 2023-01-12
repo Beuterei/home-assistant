@@ -1,0 +1,10 @@
+id: living_room_lights_off
+alias: Living Room Lights Off
+trigger:
+  platform: mqtt
+  topic: "zigbee2mqtt/Livingroom Switch/action"
+  payload: "press_2_and_4"
+action:
+  service: light.turn_off
+  target:
+    area_id: living_room

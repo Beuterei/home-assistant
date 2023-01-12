@@ -13,7 +13,7 @@ views:
               - entity: input_text.zigbee2mqtt_new_name
                 name: New Name
                 secondary_info: entity-id
-              - entity: timer.zigbee_permit_join
+              - entity: timer.zigbee2mqtt_permit_join
           - type: entities
             entities:
               - entity: switch.zigbee2mqtt_main_join

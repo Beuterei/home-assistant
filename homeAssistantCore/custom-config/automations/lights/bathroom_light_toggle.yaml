@@ -1,0 +1,9 @@
+id: bathroom_light_toggle
+alias: Bathroom Light
+trigger:
+  platform: mqtt
+  topic: "zigbee2mqtt/Bathroom Switch/action"
+  payload: "left_press"
+action:
+  service: light.toggle
+  entity_id: light.bathroom_light
