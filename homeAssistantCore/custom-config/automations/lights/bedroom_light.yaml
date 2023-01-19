@@ -1,4 +1,4 @@
-id: bedroom_light_toggle
+id: bedroom_light
 alias: Bedroom Light
 trigger:
   - platform: mqtt

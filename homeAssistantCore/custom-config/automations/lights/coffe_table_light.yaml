@@ -1,0 +1,19 @@
+id: coffe_table_light
+alias: Coffee Table Light
+trigger:
+  - platform: mqtt
+    topic: "zigbee2mqtt/Living Room Switch/action"
+    payload: "press_1"
+  - platform: mqtt
+    topic: "zigbee2mqtt/Living Room Switch/action"
+    payload: "press_2"
+action:
+  - if:
+    - condition: template
+      value_template: "{{ trigger.payload == 'press_1' }}"
+    then:
+      - service: light.turn_on
+        entity_id: light.living_room_coffee_table_light
+    else:
+      - service: light.turn_off
+        entity_id: light.living_room_coffee_table_light

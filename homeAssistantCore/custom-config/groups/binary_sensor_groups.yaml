@@ -4,3 +4,4 @@
   device_class: opening
   entities:
     - binary_sensor.living_room_window_contact
+    - binary_sensor.bedroom_window_contact

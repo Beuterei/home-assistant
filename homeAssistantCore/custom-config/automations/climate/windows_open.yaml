@@ -1,0 +1,18 @@
+id: windows_open
+alias: Some Windows Open
+trigger:
+  platform: state
+  entity_id: binary_sensor.all_windows
+  to:
+    - "on"
+    - "off"
+action:
+  - if:
+      - condition: template
+        value_template: "{{ trigger.to_state.state == 'off' }}"
+    then:
+      - service: climate.turn_on
+        entity_id: all
+    else:
+      - service: climate.turn_off
+        entity_id: all

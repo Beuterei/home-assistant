@@ -1,4 +1,4 @@
-id: bathroom_light_toggle
+id: bathroom_light
 alias: Bathroom Light
 trigger:
   platform: mqtt

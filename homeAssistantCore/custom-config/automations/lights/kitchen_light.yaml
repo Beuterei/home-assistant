@@ -1,4 +1,4 @@
-id: kitchen_light_toggle
+id: kitchen_light
 alias: Kitchen Light
 trigger:
   platform: mqtt

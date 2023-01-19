@@ -1,0 +1,21 @@
+id: living_room_lights
+alias: Living Room Lights
+trigger:
+  - platform: mqtt
+    topic: "zigbee2mqtt/Living Room Switch/action"
+    payload: "press_1_and_3"
+  - platform: mqtt
+    topic: "zigbee2mqtt/Living Room Switch/action"
+    payload: "press_2_and_4"
+action:
+  - if:
+    - condition: template
+      value_template: "{{ trigger.payload == 'press_1_and_3' }}"
+    then:
+      - service: light.turn_on
+        target:
+          area_id: living_room
+    else:
+      - service: light.turn_off
+        target:
+          area_id: living_room

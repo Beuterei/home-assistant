@@ -1,0 +1,19 @@
+id: dining_table_light
+alias: Dining Table Light
+trigger:
+  - platform: mqtt
+    topic: "zigbee2mqtt/Living Room Switch/action"
+    payload: "press_3"
+  - platform: mqtt
+    topic: "zigbee2mqtt/Living Room Switch/action"
+    payload: "press_4"
+action:
+  - if:
+    - condition: template
+      value_template: "{{ trigger.payload == 'press_3' }}"
+    then:
+      - service: light.turn_on
+        entity_id: light.living_room_dining_table_light
+    else:
+      - service: light.turn_off
+        entity_id: light.living_room_dining_table_light

@@ -1,4 +1,4 @@
-id: bedroom_workbench_light_toggle
+id: bedroom_workbench_light
 alias: Workbench Light
 trigger:
   platform: mqtt

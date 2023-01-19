@@ -44,3 +44,5 @@ devices:
     friendly_name: Living Room Window
   '0x00178801089632dc':
     friendly_name: Toothbrush Button
+  '0x00158d000891f691':
+    friendly_name: Bedroom Window
