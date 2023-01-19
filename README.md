@@ -99,6 +99,8 @@ This is my personal home assistant setup so it probably won't have much use for 
 
 12. delete unused areas
 
+13. Setup [Google Assistant](https://www.nabucasa.com/config/google_assistant/)
+
 ## Customization
 
 1. Create a `.env` file

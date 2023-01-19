@@ -5,9 +5,21 @@ trigger:
   topic: "zigbee2mqtt/One Button To Rule Them All/action"
   payload: "press"
 action:
-  - service: light.turn_off
-    entity_id: all
-  - service: climate.set_preset_mode
-    entity_id: all
-    data:
-      preset_mode: "sleep"
+  - if:
+      - condition: template
+        # 43200s is 12h
+        value_template: >
+          {{ (as_timestamp(now()) - as_timestamp(states.sensor.toothbrush_button_action.last_changed)) < 43200 }}
+    then:
+      - service: light.turn_off
+        entity_id: all
+      - service: climate.set_preset_mode
+        entity_id: all
+        data:
+          preset_mode: "sleep"
+    else:
+      - service: notify.notify
+        data:
+          title: Brush your teeth
+          message: you filthy idiot <3
+

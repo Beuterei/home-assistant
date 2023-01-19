@@ -13,13 +13,28 @@ action:
       - condition: template
         value_template: "{{ states.light | selectattr('state', 'eq', 'on') | list | length > 0 }}"
     then:
-        - service: notify.notify
-          data_template:
-            title: "Lights left on"
-            message: >-
-              The following lights are still on:
-              {% for light in states.light %}
-              {%- if light.state == "on" %}
-                - {{ light.name }}
-              {%- endif %}
-              {% endfor %}
+      - service: notify.notify
+        data_template:
+          title: "Lights left on"
+          message: >-
+            The following lights are still on:
+            {% for light in states.light %}
+            {%- if light.state == "on" %}
+              - {{ light.name }}
+            {%- endif %}
+            {% endfor %}
+  - if:
+      - condition: state
+        entity_id: binary_sensor.all_windows
+        state: 'on'
+    then:
+      - service: notify.notify
+        data_template:
+          title: "Windows open"
+          message: >-
+            The following windows are open:
+            {% for window in expand('binary_sensor.all_windows') %}
+            {%- if window.state == 'on' %} 
+              - {{ window.name }}
+            {%- endif %}
+            {% endfor %}

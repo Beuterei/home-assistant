@@ -7,9 +7,9 @@ serial:
   port: /dev/ttyACM0
 devices:
   '0x00124b00251394b8':
-    friendly_name: Livingroom Thermostat
+    friendly_name: Living Room Thermostat
   '0xc4988600000f774f':
-    friendly_name: Livingroom Heater
+    friendly_name: Living Room Heater
   '0x00124b002512fbaf':
     friendly_name: Bedroom Thermostat
   '0xc4988600000f9b7b':
@@ -17,13 +17,13 @@ devices:
   '0x001788010bb3f847':
     friendly_name: Bedroom Workbench Light
   '0x0000000001739bb6':
-    friendly_name: Livingroom Switch
+    friendly_name: Living Room Switch
   '0x001788010cc3328c':
     friendly_name: Bedroom Desk Switch
   '0x00178801067afd51':
-    friendly_name: Livingroom Dining Table Light
+    friendly_name: Living Room Dining Table Light
   '0x00178801093da33f':
-    friendly_name: Livingroom Coffee Table Light
+    friendly_name: Living Room Coffee Table Light
   '0x001788010895078a':
     friendly_name: Bedroom Workbench Button
   '0x001788010c0b0a14':
@@ -40,3 +40,7 @@ devices:
     friendly_name: Kitchen Light
   '0x001788010896d4f7':
     friendly_name: One Button To Rule Them All
+  '0x00158d0008d9423c':
+    friendly_name: Living Room Window
+  '0x00178801089632dc':
+    friendly_name: Toothbrush Button

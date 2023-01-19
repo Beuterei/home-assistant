@@ -2,7 +2,7 @@ id: living_room_lights_on
 alias: Living Room Lights On
 trigger:
   platform: mqtt
-  topic: "zigbee2mqtt/Livingroom Switch/action"
+  topic: "zigbee2mqtt/Living Room Switch/action"
   payload: "press_1_and_3"
 action:
   service: light.turn_on

@@ -32,3 +32,5 @@ input_number: !include_dir_named inputs/numbers/
 input_text: !include_dir_named inputs/texts/
 
 timer: !include_dir_named timers/
+
+binary_sensor groups: !include groups/binary_sensor_groups.yaml

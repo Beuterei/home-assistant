@@ -1,0 +1,15 @@
+id: living_room_window_open
+alias: Living Room Window Open
+trigger:
+  platform: mqtt
+  topic: zigbee2mqtt/Living Room Window
+action:
+  - if:
+      - condition: template
+        value_template: "{{ trigger.payload_json.contact }}"
+    then:
+      - service: climate.turn_on
+        entity_id: all
+    else:
+      - service: climate.turn_off
+        entity_id: all

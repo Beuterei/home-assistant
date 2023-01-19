@@ -2,8 +2,8 @@ id: dining_table_light_off
 alias: Dining Table Light Off
 trigger:
   platform: mqtt
-  topic: "zigbee2mqtt/Livingroom Switch/action"
+  topic: "zigbee2mqtt/Living Room Switch/action"
   payload: "press_4"
 action:
   service: light.turn_off
-  entity_id: light.livingroom_dining_table_light
+  entity_id: light.living_room_dining_table_light

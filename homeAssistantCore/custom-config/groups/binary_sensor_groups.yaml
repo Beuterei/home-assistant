@@ -1,0 +1,6 @@
+- platform: group
+  unique_id: all_windows_group
+  name: "All Windows"
+  device_class: opening
+  entities:
+    - binary_sensor.living_room_window_contact
