@@ -14,7 +14,7 @@ action:
         value_template: "{{ states.light | selectattr('state', 'eq', 'on') | list | length > 0 }}"
     then:
       - service: notify.notify
-        data_template:
+        data:
           title: "Lights left on"
           message: >-
             The following lights are still on:
@@ -23,10 +23,14 @@ action:
               - {{ light.name }}
             {%- endif %}
             {% endfor %}
+          data:
+            actions:
+              - action: "turn_off_lights"
+                title: "Turn off lights"
   - if:
       - condition: state
         entity_id: binary_sensor.all_windows
-        state: 'on'
+        state: "on"
     then:
       - service: notify.notify
         data_template:
@@ -38,3 +42,16 @@ action:
               - {{ window.name }}
             {%- endif %}
             {% endfor %}
+  - if:
+    - condition: state
+      entity_id: lock.home_door
+      state: "unlocked"
+    then:
+      - service: notify.notify
+        data:
+          title: "Door unlocked"
+          message: The door is unlocked
+          data:
+            actions:
+              - action: "lock_door"
+                title: "Lock door"

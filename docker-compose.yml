@@ -18,6 +18,8 @@ services:
       context: mosquitto
       args:
         MOSQUITTO_PASSWORD: ${MOSQUITTO_PASSWORD:?Missing environment variable see readme}
+    ports:
+      - 1883:1883
     container_name: homeAssistantEclipseMosquitto
     restart: unless-stopped
     volumes:
@@ -27,7 +29,7 @@ services:
       - homeassistant
 
   zigbee2mqtt:
-    image: koenkk/zigbee2mqtt:1.28.0
+    image: koenkk/zigbee2mqtt:1.31.2
     container_name: homeAssistantZigbee2mqtt
     restart: unless-stopped
     volumes:
@@ -56,6 +58,8 @@ services:
       - homeAssistantData:/config
       - ./homeAssistantCore/configuration.yaml:/config/configuration.yaml
       - ./homeAssistantCore/custom-config/:/config/custom-config/
+      - ./homeAssistantCore/resources/:/config/www/
+      - /var/run/dbus:/run/dbus:ro
     environment:
       TZ: Europe/Berlin
       DB_CONNECTION: postgresql://${POSTGRES_USER-homeAssistantCore}:${POSTGRES_PASSWORD:?Missing environment variable see readme}@postgres:5432/${POSTGRES_DB-homeAssistantCore}

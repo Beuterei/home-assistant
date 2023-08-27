@@ -46,3 +46,5 @@ devices:
     friendly_name: Toothbrush Button
   '0x00158d000891f691':
     friendly_name: Bedroom Window
+  '0xa4c1380991781f75':
+    friendly_name: Bathroom Washing Machine

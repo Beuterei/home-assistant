@@ -1,0 +1,13 @@
+id: turn_off_lights
+alias: Turn Off Lights
+trigger:
+  platform: event
+  event_type: mobile_app_notification_action
+  event_data:
+    action: "turn_off_lights"
+action:
+  - service: light.turn_off
+    entity_id: all
+  - service: notify.notify
+    data:
+      message: "All lights have been turned off"

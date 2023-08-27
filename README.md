@@ -26,6 +26,12 @@
 
 This is my personal home assistant setup so it probably won't have much use for others. However, it may help someone.
 
+## System requirements
+
+- BlueZ 5.64 or later installed
+
+- Bluethooth dongle
+
 ## Setup from scratch
 
 1. Follow [Customization](#customization)

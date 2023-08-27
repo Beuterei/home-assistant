@@ -1,0 +1,14 @@
+id: lock:door
+alias: Lock dorrs
+trigger:
+  platform: event
+  event_type: mobile_app_notification_action
+  event_data:
+    action: "lock_door"
+action:
+  - service: lock.lock
+    target:
+      entity_id: lock.home_door
+  - service: notify.notify
+    data:
+      message: "Door is locked"

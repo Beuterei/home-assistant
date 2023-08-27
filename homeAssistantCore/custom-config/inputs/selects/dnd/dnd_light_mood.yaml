@@ -1,0 +1,9 @@
+name: DND light mood
+options:
+  - "None"
+  - "Day"
+  - "Night"
+  - "Forest"
+  - "Thunderstorm"
+initial: "None"
+icon: mdi:play-box-outline

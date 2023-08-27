@@ -1,0 +1,12 @@
+id: washing_machine_finished
+alias: Washing machine finished
+trigger:
+  platform: numeric_state
+  entity_id: sensor.bathroom_washing_machine_power
+  below: 2
+  for:
+    seconds: 120
+action:
+  - service: notify.notify
+    data:
+      message: "Washing machine finished!"

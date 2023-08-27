@@ -1,0 +1,53 @@
+id: thunderstorm_light_cycle
+alias: "Thunderstorm Light Cycle"
+trigger:
+  platform: state
+  entity_id: input_select.dnd_light_mood
+  to: "Thunderstorm"
+action:
+  - variables:
+      counter: 0
+      thunderstorm_color: [48, 48, 48] # cloudy thunderstorm color
+  - service: light.turn_on
+    entity_id: 
+      - "light.living_room_dining_table_light"
+      - "light.living_room_coffee_table_light"
+    data:
+      brightness: 40
+      transition: 40
+      rgb_color: "{{ thunderstorm_color }}"
+  - repeat:
+      while:
+        - condition: state
+          entity_id: input_select.dnd_light_mood
+          state: "Thunderstorm"
+      sequence:
+        - variables:
+            random_number: "{{ range(1,10)|random }}"
+            flash_entity: "{{ ['light.living_room_coffee_table_light', 'light.living_room_dining_table_light']|random }}"
+        - service: light.turn_on
+          entity_id: 
+            - "light.living_room_dining_table_light"
+            - "light.living_room_coffee_table_light"
+          data:
+            brightness: 40
+            transition: 1
+            rgb_color: "{{ thunderstorm_color }}"
+        - delay:
+            milliseconds: "{{ range(400, 1200)|random }}"
+        - choose:
+            - conditions:
+                - condition: template
+                  value_template: "{{ random_number == 1 }}"
+              sequence:
+                - service: light.turn_on
+                  data_template:
+                    brightness: 255
+                    transition: 0
+                    rgb_color: [255, 255, 255] # white flash
+                    entity_id: "{{ flash_entity }}"
+                - delay:
+                    milliseconds: 100
+                - service: light.turn_off
+                  data_template:
+                    entity_id: "{{ flash_entity }}"

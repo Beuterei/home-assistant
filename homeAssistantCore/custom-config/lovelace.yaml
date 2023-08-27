@@ -1,4 +1,4 @@
-mode: storage
+mode: yaml
 dashboards:
   temperature-dashboard:
     mode: yaml
@@ -13,3 +13,8 @@ dashboards:
     show_in_sidebar: true
     require_admin: true
     filename: custom-config/dashboards/zigbee2mqtt.yaml
+resources:
+  - url: /local/mushroom.js
+    type: module
+  - url: /local/auto-entities.js
+    type: module
