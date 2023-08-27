@@ -13,9 +13,9 @@
     <br />
     <br />
     ·
-    <a href="https://github.com/beuluis/home-assistant/issues">Report Bug</a>
+    <a href="https://github.com/Beuterei/home-assistant/issues">Report Bug</a>
     ·
-    <a href="https://github.com/beuluis/home-assistant/issues">Request Feature</a>
+    <a href="https://github.com/Beuterei/home-assistant/issues">Request Feature</a>
     ·
   </p>
 </p>
@@ -55,7 +55,7 @@ This is my personal home assistant setup so it probably won't have much use for 
 
 - For EnOcean switches press the button corisponding to the zigbee channel (default should be upper right) for 10 seconds.
 
-7. Add all `ESP Home` intregrations listed [here](https://github.com/beuluis/esp-home#projects). The hostname is the project name
+7. Add all `ESP Home` intregrations listed [here](https://github.com/Beuterei/esp-home#projects). The hostname is the project name
 
 8. Add all desired autodiscovered integrations:
 
@@ -133,33 +133,15 @@ touch .env
 | `LONGITUDE`              | [See](https://www.home-assistant.io/docs/configuration/basic/)                                                                                             | none                | true     |
 | `MOSQUITTO_PASSWORD`     | MQTT broker password                                                                                                                                       | none                | true     |
 
-<!-- CONTRIBUTING -->
-
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<!-- CONTACT -->
-
-## Contact
-
-Luis Beu - me@luisbeu.de
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/beuluis/home-assistant.svg?style=flat-square
-[contributors-url]: https://github.com/beuluis/home-assistant/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/beuluis/home-assistant.svg?style=flat-square
-[forks-url]: https://github.com/beuluis/home-assistant/network/members
-[stars-shield]: https://img.shields.io/github/stars/beuluis/home-assistant.svg?style=flat-square
-[stars-url]: https://github.com/beuluis/home-assistant/stargazers
-[issues-shield]: https://img.shields.io/github/issues/beuluis/home-assistant.svg?style=flat-square
-[issues-url]: https://github.com/beuluis/home-assistant/issues
-[license-shield]: https://img.shields.io/github/license/beuluis/home-assistant.svg?style=flat-square
+[contributors-shield]: https://img.shields.io/github/contributors/Beuterei/home-assistant.svg?style=flat-square
+[contributors-url]: https://github.com/Beuterei/home-assistant/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Beuterei/home-assistant.svg?style=flat-square
+[forks-url]: https://github.com/Beuterei/home-assistant/network/members
+[stars-shield]: https://img.shields.io/github/stars/Beuterei/home-assistant.svg?style=flat-square
+[stars-url]: https://github.com/Beuterei/home-assistant/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Beuterei/home-assistant.svg?style=flat-square
+[issues-url]: https://github.com/Beuterei/home-assistant/issues
+[license-shield]: https://img.shields.io/github/license/Beuterei/home-assistant.svg?style=flat-square
