@@ -59,7 +59,6 @@ services:
       - ./homeAssistantCore/configuration.yaml:/config/configuration.yaml
       - ./homeAssistantCore/custom-config/:/config/custom-config/
       - ./homeAssistantCore/resources/:/config/www/
-      - /var/run/dbus:/run/dbus:ro
     environment:
       TZ: Europe/Berlin
       DB_CONNECTION: postgresql://${POSTGRES_USER-homeAssistantCore}:${POSTGRES_PASSWORD:?Missing environment variable see readme}@postgres:5432/${POSTGRES_DB-homeAssistantCore}

@@ -9,7 +9,7 @@ action:
       - condition: template
         # 3600s is 1h
         value_template: >
-          {{ (as_timestamp(now()) - as_timestamp(states.sensor.toothbrush_button_action.last_changed)) < 3600 }}
+          {{ (as_timestamp(now()) - as_timestamp(states.sensor.toothbrush_toothbrush_state.last_changed)) < 3600 }}
     then:
       - service: light.turn_off
         entity_id: all
