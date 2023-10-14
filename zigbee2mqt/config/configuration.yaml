@@ -47,7 +47,5 @@ devices:
     friendly_name: Bedroom Window
   '0xa4c1380991781f75':
     friendly_name: Bathroom Washing Machine
-  '0x001788010895078a':
-    friendly_name: '0x001788010895078a'
 frontend:
   auth_token: V0NdjHUlaa8Yl0zWdNFFJ9
