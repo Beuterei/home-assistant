@@ -1,0 +1,7 @@
+platform: statistics
+name: "Max Brush Time Last 12h"
+unique_id: max_brush_time_12h
+entity_id: sensor.toothbrush_time
+state_characteristic: value_max
+max_age:
+  hours: 12

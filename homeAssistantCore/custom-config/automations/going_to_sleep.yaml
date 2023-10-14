@@ -6,10 +6,9 @@ trigger:
   payload: "press"
 action:
   - if:
-      - condition: template
-        # 3600s is 1h
-        value_template: >
-          {{ (as_timestamp(now()) - as_timestamp(states.sensor.toothbrush_toothbrush_state.last_changed)) < 3600 }}
+      - condition: numeric_state
+        entity_id: sensor.max_brush_time_last_12h
+        above: 120
     then:
       - service: light.turn_off
         entity_id: all
