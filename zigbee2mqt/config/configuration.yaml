@@ -3,7 +3,6 @@ mqtt:
   user: mqtt
   base_topic: zigbee2mqtt
   server: mqtt://eclipse-mosquitto
-  password: oHKrutL1h0dumH
 serial:
   port: /dev/ttyACM0
 devices:
@@ -47,5 +46,3 @@ devices:
     friendly_name: Bedroom Window
   '0xa4c1380991781f75':
     friendly_name: Bathroom Washing Machine
-frontend:
-  auth_token: V0NdjHUlaa8Yl0zWdNFFJ9

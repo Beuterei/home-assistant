@@ -16,6 +16,9 @@ action:
         entity_id: all
         data:
           preset_mode: "sleep"
+      - service: remote.turn_off
+        target:
+          device_id: c4bdf5ca58467b46b74da280a63973a8
     else:
       - service: notify.notify
         data:

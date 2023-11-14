@@ -43,7 +43,7 @@ This is my personal home assistant setup so it probably won't have much use for 
    | `Broker`   | `eclipse-mosquitto`                                                    |
    | `Port`     | `1883`                                                                 |
    | `Username` | `mqtt`                                                                 |
-   | `Password` | Use value of `MOSQUITTO_PASSWORD` from [Customization](#customization) |
+   | `Password` | Use value of `MQTT_PASSWORD` from [Customization](#customization) |
 
 6. Open Zigbee2mqtt dashboard on port `8124` and rejoin all devices listed in [configuration.yaml](zigbee2mqt/config/configuration.yaml) (Host differs from the Home assistant instance)
 
@@ -101,6 +101,8 @@ This is my personal home assistant setup so it probably won't have much use for 
 
 13. Setup [Google Assistant](https://www.nabucasa.com/config/google_assistant/)
 
+14. Setup BLE devices
+
 ## Customization
 
 1. Create a `.env` file
@@ -125,7 +127,7 @@ touch .env
 | `ZIGBEE_USB_DEVICE`      | USB Zigbee dongle                                                                                                                                          | `/dev/ttyACM0`      | false    |
 | `LATITUDE`               | [See](https://www.home-assistant.io/docs/configuration/basic/)                                                                                             | none                | true     |
 | `LONGITUDE`              | [See](https://www.home-assistant.io/docs/configuration/basic/)                                                                                             | none                | true     |
-| `MOSQUITTO_PASSWORD`     | MQTT broker password                                                                                                                                       | none                | true     |
+| `MQTT_PASSWORD`     | MQTT broker password                                                                                                                                       | none                | true     |
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

@@ -3,7 +3,6 @@ alias: Kitchen Light
 trigger:
   platform: mqtt
   topic: "zigbee2mqtt/Kitchen Switch/action"
-  payload: "left_press"
 action:
   service: light.toggle
   entity_id: light.kitchen_light

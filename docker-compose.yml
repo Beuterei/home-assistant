@@ -4,6 +4,7 @@ services:
   postgres:
     image: postgres:14.2-alpine
     container_name: homeAssistantPostgresql
+    restart: unless-stopped
     environment:
       POSTGRES_USER: ${POSTGRES_USER-homeAssistantCore}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Missing environment variable see readme}
@@ -17,7 +18,7 @@ services:
     build:
       context: mosquitto
       args:
-        MOSQUITTO_PASSWORD: ${MOSQUITTO_PASSWORD:?Missing environment variable see readme}
+        MQTT_PASSWORD: ${MQTT_PASSWORD:?Missing environment variable see readme}
     ports:
       - 1883:1883
     container_name: homeAssistantEclipseMosquitto
@@ -29,19 +30,19 @@ services:
       - homeassistant
 
   zigbee2mqtt:
-    image: koenkk/zigbee2mqtt:1.31.2
+    build:
+      context: zigbee2mqt
     container_name: homeAssistantZigbee2mqtt
     restart: unless-stopped
     volumes:
       - zigbee2mqttData:/app/data
       - /run/udev:/run/udev:ro
-      - ./zigbee2mqt/config/configuration.yaml:/app/data/configuration.yaml
     ports:
       - 8124:8080
     environment:
       TZ: Europe/Berlin
-      ZIGBEE2MQTT_CONFIG_ADVANCED_KEY: ${ZIGBEE_KEY:?Missing environment variable see readme}
-      ZIGBEE2MQTT_CONFIG_MQTT_PASSWORD: ${MOSQUITTO_PASSWORD:?Missing environment variable see readme}
+      ZIGBEE2MQTT_CONFIG_ADVANCED_NETWORK_KEY: ${ZIGBEE_KEY:?Missing environment variable see readme}
+      ZIGBEE2MQTT_CONFIG_MQTT_PASSWORD: ${MQTT_PASSWORD:?Missing environment variable see readme}
       ZIGBEE2MQTT_CONFIG_FRONTEND_AUTH_TOKEN: ${ZIGBEE2MQTT_AUTH_TOKEN:?Missing environment variable see readme}
     devices:
       - ${ZIGBEE_USB_DEVICE-/dev/ttyACM0}:/dev/ttyACM0
@@ -51,7 +52,7 @@ services:
       - homeassistant
 
   home-assistant:
-    image: homeassistant/home-assistant:2022.12
+    image: homeassistant/home-assistant:2023.11
     container_name: homeAssistantCore
     restart: unless-stopped
     volumes:
