@@ -14,7 +14,7 @@ dashboards:
     require_admin: true
     filename: custom-config/dashboards/zigbee2mqtt.yaml
 resources:
-  - url: /local/mushroom.js
+  - url: /local/community/mushroom.js
     type: module
-  - url: /local/auto-entities.js
+  - url: /local/community/auto-entities.js
     type: module

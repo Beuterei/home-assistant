@@ -1,0 +1,26 @@
+{
+  "piitaya/lovelace-mushroom": {
+    "ref": "v3.5.2",
+    "refType": "tag",
+    "category": "plugin",
+    "hacsConfig": {
+      "name": "Mushroom",
+      "filename": "mushroom.js"
+    },
+    "releaseUrl": "https://github.com/piitaya/lovelace-mushroom/releases/download/v3.5.2/mushroom.js",
+    "localReferences": [
+      "mushroom.js"
+    ]
+  },
+  "thomasloven/lovelace-auto-entities": {
+    "ref": "1.12.1",
+    "refType": "tag",
+    "category": "plugin",
+    "hacsConfig": {
+      "name": "auto-entities"
+    },
+    "remoteFiles": [
+      "auto-entities.js"
+    ]
+  }
+}
