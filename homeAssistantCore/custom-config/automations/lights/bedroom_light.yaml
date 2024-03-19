@@ -3,6 +3,7 @@ alias: Bedroom Light
 trigger:
   - platform: mqtt
     topic: "zigbee2mqtt/Bedroom Desk Switch/action"
+    payload: left_press
   - platform: mqtt
     topic: "zigbee2mqtt/Bedroom Bed Switch/action"
 action:

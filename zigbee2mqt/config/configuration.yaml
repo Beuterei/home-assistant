@@ -36,8 +36,6 @@ devices:
     friendly_name: Kitchen Switch
   '0x001788010c01960e':
     friendly_name: Kitchen Light
-  '0x001788010896d4f7':
-    friendly_name: One Button To Rule Them All
   '0x00158d0008d9423c':
     friendly_name: Living Room Window
   '0x00178801089632dc':
@@ -46,3 +44,5 @@ devices:
     friendly_name: Bedroom Window
   '0xa4c1380991781f75':
     friendly_name: Bathroom Washing Machine
+  '0x00158d0009f50653':
+    friendly_name: One Button To Rule Them All

@@ -2,7 +2,7 @@ id: morning_prepare
 alias: Morning Prepare
 trigger:
   platform: time
-  at: "08:00:00"
+  at: "08:30:00"
 condition: "{{ is_state('person.luis_beu', 'home') }}"
 action:
   - service: climate.set_preset_mode

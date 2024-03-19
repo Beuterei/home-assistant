@@ -1,27 +1,49 @@
 id: going_to_sleep
 alias: Going To Sleep
 trigger:
-  platform: mqtt
-  topic: "zigbee2mqtt/One Button To Rule Them All/action"
-  payload: "press"
+  - platform: mqtt
+    topic: "zigbee2mqtt/One Button To Rule Them All/action"
+    payload: "single"
+  - platform: mqtt
+    topic: "zigbee2mqtt/One Button To Rule Them All/action"
+    payload: "hold"
 action:
-  - if:
-      - condition: numeric_state
-        entity_id: sensor.max_brush_time_last_12h
-        above: 120
-    then:
-      - service: light.turn_off
-        entity_id: all
-      - service: climate.set_preset_mode
-        entity_id: all
-        data:
-          preset_mode: "sleep"
-      - service: remote.turn_off
-        target:
-          device_id: c4bdf5ca58467b46b74da280a63973a8
-    else:
-      - service: notify.notify
-        data:
-          title: Brush your teeth
-          message: you filthy idiot <3
-
+  - choose:
+      - conditions:
+          - condition: template
+            value_template: "{{ trigger.payload == 'hold' }}"
+        sequence:
+          - if:
+              - condition: numeric_state
+                entity_id: sensor.max_brush_time_last_12h
+                above: 120
+            then:
+              - service: light.turn_off
+                entity_id: all
+              - service: climate.set_preset_mode
+                entity_id: all
+                data:
+                  preset_mode: "sleep"
+              - service: remote.turn_off
+                target:
+                  entity_id: remote.game_of_chromes
+            else:
+              - service: notify.notify
+                data:
+                  title: Brush your teeth
+                  message: "you filthy idiot <3"
+    default:
+      - if:
+          - condition: numeric_state
+            entity_id: sensor.max_brush_time_last_12h
+            above: 120
+        then:
+          - service: climate.set_preset_mode
+            entity_id: all
+            data:
+              preset_mode: "sleep"
+        else:
+          - service: notify.notify
+            data:
+              title: Brush your teeth
+              message: "you filthy idiot <3"
