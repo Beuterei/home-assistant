@@ -58,6 +58,7 @@ services:
     volumes:
       - homeAssistantData:/config
       - ./homeAssistantCore/configuration.yaml:/config/configuration.yaml
+      - ./homeAssistantCore/ui-lovelace.yaml:/config/ui-lovelace.yaml
       - ./homeAssistantCore/custom-config/:/config/custom-config/
       - ./homeAssistantCore/www/:/config/www/
     environment:

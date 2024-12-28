@@ -1,0 +1,1 @@
+!include custom-config/dashboards/overview-dashboard.yaml # move entry config to controlled directory by me to mount the whole thing without noise

@@ -1,11 +1,11 @@
 mode: yaml
 dashboards:
-  temperature-dashboard:
+  rooms-dashboard:
     mode: yaml
-    title: Temperature
-    icon: mdi:home-thermometer-outline
+    title: Rooms
+    icon: mdi:home
     show_in_sidebar: true
-    filename: custom-config/dashboards/temperature-control.yaml
+    filename: custom-config/dashboards/rooms-dashboard.yaml
   zigbee2mqtt-dashboard:
     mode: yaml
     title: Zigbee2MQTT

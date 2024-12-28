@@ -23,7 +23,9 @@ climate: !include climate.yaml
 # TODO: do sleep as scene
 # TODO: Plants dashboard
 # TODO: Printer dashboard
+# TODO: 3D-Printer dashboard
 # TODO: DND dashboard
+# TODO: Seperate dashboard views in files
 
 automation: !include_dir_list automations/
 
