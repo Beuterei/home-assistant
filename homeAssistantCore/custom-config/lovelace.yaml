@@ -16,5 +16,7 @@ dashboards:
 resources:
   - url: /local/community/mushroom.js
     type: module
+  - url: /local/community/mini-graph-card-bundle.js
+    type: module
   - url: /local/community/auto-entities.js
     type: module

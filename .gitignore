@@ -1,5 +1,7 @@
 .npmrc
 
+homeAssistantCore/www
+
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,webstorm,phpstorm,node,git,windows,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,webstorm,phpstorm,node,git,windows,macos
 

@@ -1,19 +1,19 @@
 {
   "piitaya/lovelace-mushroom": {
-    "ref": "v3.5.2",
+    "ref": "v4.2.1",
     "refType": "tag",
     "category": "plugin",
     "hacsConfig": {
       "name": "Mushroom",
       "filename": "mushroom.js"
     },
-    "releaseUrl": "https://github.com/piitaya/lovelace-mushroom/releases/download/v3.5.2/mushroom.js",
+    "releaseUrl": "https://github.com/piitaya/lovelace-mushroom/releases/download/v4.2.1/mushroom.js",
     "localReferences": [
       "mushroom.js"
     ]
   },
   "thomasloven/lovelace-auto-entities": {
-    "ref": "1.12.1",
+    "ref": "v1.13.0",
     "refType": "tag",
     "category": "plugin",
     "hacsConfig": {
@@ -21,6 +21,18 @@
     },
     "remoteFiles": [
       "auto-entities.js"
+    ]
+  },
+  "kalkih/mini-graph-card": {
+    "ref": "v0.12.1",
+    "refType": "tag",
+    "category": "plugin",
+    "hacsConfig": {
+      "name": "mini-graph-card"
+    },
+    "releaseUrl": "https://github.com/kalkih/mini-graph-card/releases/download/v0.12.1/mini-graph-card-bundle.js",
+    "localReferences": [
+      "mini-graph-card-bundle.js"
     ]
   }
 }

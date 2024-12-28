@@ -46,3 +46,5 @@ devices:
     friendly_name: Bathroom Washing Machine
   '0x00158d0009f50653':
     friendly_name: One Button To Rule Them All
+  '0x001788010e2cd614':
+    friendly_name: Bedroom Desk Backlight

@@ -1,0 +1,37 @@
+- platform: group
+  name: "All Lights"
+  entities:
+    - light.living_room_dining_table_light
+    - light.living_room_coffee_table_light
+    - light.bedroom_light
+    - light.bedroom_workbench_light
+    - light.bedroom_desk_backlight
+    - light.bathroom_light
+    - light.kitchen_light
+    - light.emergency_exit_sign
+    - light.treehouse_light
+
+- platform: group
+  name: "Living Room Lights"
+  entities:
+    - light.living_room_dining_table_light
+    - light.living_room_coffee_table_light
+    - light.emergency_exit_sign
+    - light.treehouse_light
+
+- platform: group
+  name: "Bedroom Lights"
+  entities:
+    - light.bedroom_light
+    - light.bedroom_workbench_light
+    - light.bedroom_desk_backlight
+
+- platform: group
+  name: "Bathroom Lights"
+  entities:
+    - light.bathroom_light
+
+- platform: group
+  name: "Kitchen Lights"
+  entities:
+    - light.kitchen_light

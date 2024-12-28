@@ -20,8 +20,10 @@ lovelace: !include lovelace.yaml
 climate: !include climate.yaml
 
 # TODO: write comments
-# TODO: get rid of sony tv
 # TODO: do sleep as scene
+# TODO: Plants dashboard
+# TODO: Printer dashboard
+# TODO: DND dashboard
 
 automation: !include_dir_list automations/
 
@@ -35,4 +37,7 @@ input_select: !include_dir_named inputs/selects/
 
 timer: !include_dir_named timers/
 
-binary_sensor groups: !include groups/binary_sensor_groups.yaml
+binary_sensor: !include groups/binary_sensor_groups.yaml
+
+# Groups
+light: !include groups/light_groups.yaml
