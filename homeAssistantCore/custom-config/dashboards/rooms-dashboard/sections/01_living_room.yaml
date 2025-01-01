@@ -1,0 +1,79 @@
+type: grid
+cards:
+  - type: heading
+    heading_style: title
+    heading: Living Room
+    grid_options:
+      rows: 1
+      columns: full
+    badges:
+      - type: entity
+        entity: binary_sensor.living_room_window_contact
+      - type: entity
+        entity: remote.game_of_chrome
+    icon: mdi:sofa
+  - alert_classes: []
+    sensor_classes: []
+    type: area
+    area: living_room
+  - type: custom:mushroom-light-card
+    entity: light.living_room_lights
+    use_light_color: true
+    show_brightness_control: true
+    fill_container: true
+    grid_options:
+      columns: full
+  - type: custom:mushroom-light-card
+    entity: light.living_room_dining_table_light
+    name: Dining Table
+    use_light_color: true
+    show_brightness_control: true
+    fill_container: true
+    grid_options:
+      columns: 6
+      rows: 2
+  - type: custom:mushroom-light-card
+    entity: light.living_room_coffee_table_light
+    name: Coffee Table
+    use_light_color: true
+    show_brightness_control: true
+    fill_container: true
+    grid_options:
+      columns: 6
+      rows: 2
+  - type: custom:mushroom-light-card
+    entity: light.emergency_exit_sign
+    use_light_color: true
+    show_brightness_control: true
+    fill_container: true
+    grid_options:
+      columns: 6
+      rows: 2
+  - type: custom:mushroom-light-card
+    entity: light.treehouse_light
+    use_light_color: true
+    fill_container: true
+    grid_options:
+      columns: 6
+      rows: 2
+  - type: custom:mushroom-climate-card
+    entity: climate.living_room
+    show_temperature_control: true
+    fill_container: true
+    grid_options:
+      columns: full
+  - type: custom:mini-graph-card
+    line_color: red
+    entities:
+      - entity: sensor.living_room_thermostat_temperature
+    grid_options:
+      columns: 6
+      rows: 2.65
+  - type: custom:mini-graph-card
+    line_color: blue
+    entities:
+      - entity: sensor.living_room_thermostat_humidity
+    grid_options:
+      columns: 6
+      rows: 2.65
+column_span: 1

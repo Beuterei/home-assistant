@@ -5,7 +5,7 @@ dashboards:
     title: Rooms
     icon: mdi:home
     show_in_sidebar: true
-    filename: custom-config/dashboards/rooms-dashboard.yaml
+    filename: custom-config/dashboards/rooms-dashboard/rooms-dashboard.yaml
   zigbee2mqtt-dashboard:
     mode: yaml
     title: Zigbee2MQTT

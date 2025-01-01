@@ -1,0 +1,34 @@
+type: grid
+cards:
+  - type: heading
+    heading: Kitchen
+    heading_style: title
+    badges:
+      - type: entity
+        entity: lock.home_door
+    icon: mdi:fridge
+  - alert_classes: []
+    sensor_classes: []
+    type: area
+    area: kitchen
+  - type: custom:mushroom-light-card
+    entity: light.kitchen_lights
+    use_light_color: true
+    show_brightness_control: true
+    fill_container: true
+    grid_options:
+      columns: full
+  - type: custom:mini-graph-card
+    line_color: red
+    entities:
+      - entity: sensor.kitchen_thermostat_temperature
+    grid_options:
+      columns: 6
+      rows: 2.65
+  - type: custom:mini-graph-card
+    line_color: blue
+    entities:
+      - entity: sensor.kitchen_thermostat_humidity
+    grid_options:
+      columns: 6
+      rows: 2.65

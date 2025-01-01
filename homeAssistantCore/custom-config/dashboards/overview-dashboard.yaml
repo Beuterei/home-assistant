@@ -43,13 +43,13 @@ views:
       - type: custom:mushroom-chips-card
         chips:
           - type: template
-            entity: sensor.bathroom_washing_machine_power
+            entity: sensor.bathroom_washing_machine_socket_power
             icon: mdi:washing-machine
             content: >-
-              {{ (states('sensor.bathroom_washing_machine_power') > '2') |
+              {{ (states('sensor.bathroom_washing_machine_socket_power') > '2') |
               iif('Running', 'Idle') }}
             icon_color: >-
-              {{ (states('sensor.bathroom_washing_machine_power') > '2') |
+              {{ (states('sensor.bathroom_washing_machine_socket_power') > '2') |
               iif('cyan', '') }}
             tap_action:
               action: more-info

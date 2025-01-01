@@ -25,9 +25,11 @@ climate: !include climate.yaml
 # TODO: Printer dashboard
 # TODO: 3D-Printer dashboard
 # TODO: DND dashboard
-# TODO: Seperate dashboard views in files
+# TODO: Add more scenes with dashboard
 
 automation: !include_dir_list automations/
+
+scene: !include_dir_list scenes/
 
 script: !include_dir_named scripts/
 

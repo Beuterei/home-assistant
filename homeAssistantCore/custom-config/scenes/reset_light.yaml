@@ -1,0 +1,6 @@
+name: Reset Light
+entities:
+  light.all_lights:
+    state: 'on'
+    brightness: 255
+    color_temp: 300

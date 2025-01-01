@@ -1,0 +1,48 @@
+type: grid
+cards:
+  - type: heading
+    heading: Bathroom
+    heading_style: title
+    icon: mdi:shower
+    badges: []
+  - alert_classes: []
+    sensor_classes: []
+    type: area
+    area: bathroom
+  - type: custom:mushroom-light-card
+    entity: light.bathroom_lights
+    use_light_color: true
+    show_brightness_control: true
+    fill_container: true
+    grid_options:
+      columns: full
+  - type: custom:mushroom-template-card
+    primary: Washing Machine
+    secondary: >-
+      {{ (states('sensor.bathroom_washing_machine_socket_power') > '2') |
+      iif('Running', 'Idle') }}
+    icon: mdi:washing-machine
+    icon_color: >-
+      {{ (states('sensor.bathroom_washing_machine_socket_power') > '2') |
+      iif('cyan', '') }}
+    tap_action:
+      action: more-info
+    fill_container: true
+    entity: sensor.bathroom_washing_machine_socket_power
+    grid_options:
+      columns: full
+      rows: 1.15
+  - type: custom:mini-graph-card
+    line_color: red
+    entities:
+      - entity: sensor.bathroom_thermostat_temperature
+    grid_options:
+      columns: 6
+      rows: 2.65
+  - type: custom:mini-graph-card
+    line_color: blue
+    entities:
+      - entity: sensor.bathroom_thermostat_humidity
+    grid_options:
+      columns: 6
+      rows: 2.65

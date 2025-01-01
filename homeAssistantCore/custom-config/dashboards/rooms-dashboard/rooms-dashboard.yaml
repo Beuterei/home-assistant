@@ -1,0 +1,7 @@
+views:
+  - title: Rooms
+    type: sections
+    max_columns: 3
+    icon: mdi:home
+    sections: !include_dir_list sections/
+    cards: []

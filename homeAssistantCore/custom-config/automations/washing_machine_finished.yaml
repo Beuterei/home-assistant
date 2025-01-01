@@ -2,7 +2,7 @@ id: washing_machine_finished
 alias: Washing machine finished
 trigger:
   platform: numeric_state
-  entity_id: sensor.bathroom_washing_machine_power
+  entity_id: sensor.bathroom_washing_machine_socket_power
   below: 2
   for:
     seconds: 120

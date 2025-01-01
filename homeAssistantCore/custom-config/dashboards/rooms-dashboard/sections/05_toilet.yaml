@@ -1,0 +1,22 @@
+type: grid
+cards:
+  - type: heading
+    heading: Toilet
+    heading_style: title
+    icon: mdi:toilet
+    badges: []
+  - type: custom:mini-graph-card
+    line_color: red
+    entities:
+      - entity: sensor.toilet_thermostat_temperature
+    grid_options:
+      columns: 6
+      rows: 2.65
+  - type: custom:mini-graph-card
+    line_color: blue
+    entities:
+      - entity: sensor.toilet_thermostat_humidity
+    grid_options:
+      columns: 6
+      rows: 2.65
+
