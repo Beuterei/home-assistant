@@ -52,7 +52,7 @@ services:
       - homeassistant
 
   home-assistant:
-    image: homeassistant/home-assistant:2025.1.0b2
+    image: homeassistant/home-assistant:2025.3
     container_name: homeAssistantCore
     restart: unless-stopped
     volumes:

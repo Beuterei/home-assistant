@@ -39,6 +39,8 @@ devices:
     friendly_name: Kitchen Light
   '0x001788010e2cd614':
     friendly_name: Bedroom Desk Backlight
+  '0x001788010e311547':
+    friendly_name: Kitchen Workbench Light
 
   # Switches
   '0x0000000001739bb6':
@@ -67,3 +69,9 @@ devices:
   # Sockets
   '0xa4c1380991781f75':
     friendly_name: Bathroom Washing Machine Socket
+
+  # Leak sensor
+  '0x842712fffe825860':
+    friendly_name: Leak Kitchen
+  '0x842712fffe825861':
+    friendly_name: Leak Bathroom

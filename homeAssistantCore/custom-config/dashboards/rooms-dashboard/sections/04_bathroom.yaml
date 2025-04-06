@@ -32,6 +32,15 @@ cards:
     grid_options:
       columns: full
       rows: 1.15
+  - type: custom:mushroom-entity-card
+    entity: binary_sensor.leak_bathroom_water_leak
+    name: Leak Detection
+    tap_action:
+      action: more-info
+    fill_container: true
+    grid_options:
+      columns: full
+      rows: 1.15
   - type: custom:mini-graph-card
     line_color: red
     entities:

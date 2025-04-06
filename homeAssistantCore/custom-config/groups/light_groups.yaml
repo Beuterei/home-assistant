@@ -8,6 +8,7 @@
     - light.bedroom_desk_backlight
     - light.bathroom_light
     - light.kitchen_light
+    - light.kitchen_workbench_light
     - light.emergency_exit_sign
     - light.treehouse_light
 
@@ -27,6 +28,12 @@
     - light.bedroom_desk_backlight
 
 - platform: group
+  name: "Bedroom Lights simple"
+  entities:
+    - light.bedroom_light
+    - light.bedroom_desk_backlight
+
+- platform: group
   name: "Bathroom Lights"
   entities:
     - light.bathroom_light
@@ -35,3 +42,4 @@
   name: "Kitchen Lights"
   entities:
     - light.kitchen_light
+    - light.kitchen_workbench_light

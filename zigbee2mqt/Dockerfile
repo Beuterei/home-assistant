@@ -1,4 +1,4 @@
-FROM koenkk/zigbee2mqtt:1.42.0
+FROM koenkk/zigbee2mqtt:2.1
 
 # Copy to prevent zigbee2mqtt to leak my passwords... Gets copied by the entrypoint script to override it in the volume
 COPY ./config/configuration.yaml /tmp/config/
