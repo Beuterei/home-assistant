@@ -1,4 +1,5 @@
 name: Reset Light
+id: reset_light
 entities:
   light.all_lights:
     state: 'on'

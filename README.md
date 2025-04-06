@@ -40,9 +40,11 @@ This is my personal home assistant setup so it probably won't have much use for 
 
 4. Login to cloud
 
-5. Enable advanced mode under profile settings
+5. Setup backup or restore from backup
 
-6. Configure MQTT with:
+6. Enable advanced mode under profile settings
+
+7. Configure MQTT with:
 
    | Variable   | Value                                                                  |
    | ---------- | ---------------------------------------------------------------------- |
@@ -51,13 +53,13 @@ This is my personal home assistant setup so it probably won't have much use for 
    | `Username` | `mqtt`                                                                 |
    | `Password` | Use value of `MQTT_PASSWORD` from [Customization](#customization) |
 
-7. Open Zigbee2mqtt dashboard on port `8124` and rejoin all devices listed in [configuration.yaml](zigbee2mqt/config/configuration.yaml) (Host differs from the Home assistant instance)
+8. Open Zigbee2mqtt dashboard on port `8124` and rejoin all devices listed in [configuration.yaml](zigbee2mqt/config/configuration.yaml) (Host differs from the Home assistant instance)
 
 - For EnOcean switches press the button corisponding to the zigbee channel (default should be upper right) for 10 seconds.
 
-8. Add all `ESP Home` intregrations listed [here](https://github.com/Beuterei/esp-home#projects). The hostname is the project name
+9. Add all `ESP Home` intregrations listed [here](https://github.com/Beuterei/esp-home#projects). The hostname is the project name
 
-9. Add all desired autodiscovered integrations:
+10. Add all desired autodiscovered integrations:
 
 - Google Cast
 
@@ -89,11 +91,11 @@ This is my personal home assistant setup so it probably won't have much use for 
   | `Track network devices (Ubiquiti devices)` | `false`  |
   | `...`                                      | Defaults |
 
-10. Add all devices to areas
+11. Add all devices to areas
 
-11. Restart that `homeassistant` configurations take effect
+12. Restart that `homeassistant` configurations take effect
 
-12. Configure persons to your liking:
+13. Configure persons to your liking:
 
 - Profile picture
 
@@ -103,11 +105,11 @@ This is my personal home assistant setup so it probably won't have much use for 
 
   - `device_tracker.oneplus5`
 
-13. delete unused areas
+14. delete unused areas
 
-14. Setup [Google Assistant](https://www.nabucasa.com/config/google_assistant/)
+15. Setup [Google Assistant](https://www.nabucasa.com/config/google_assistant/)
 
-15. Setup BLE devices
+16. Setup BLE devices
 
 ## Customization
 

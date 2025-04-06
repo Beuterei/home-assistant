@@ -5,4 +5,5 @@ trigger:
   topic: "zigbee2mqtt/Bathroom Switch/action"
 action:
   service: light.toggle
-  entity_id: light.bathroom_light
+  target:
+    area_id: bathroom

@@ -6,13 +6,6 @@ dashboards:
     icon: mdi:home
     show_in_sidebar: true
     filename: custom-config/dashboards/rooms-dashboard/rooms-dashboard.yaml
-  zigbee2mqtt-dashboard:
-    mode: yaml
-    title: Zigbee2MQTT
-    icon: mdi:zigbee
-    show_in_sidebar: true
-    require_admin: true
-    filename: custom-config/dashboards/zigbee2mqtt.yaml
 resources:
   - url: /local/community/mushroom.js
     type: module

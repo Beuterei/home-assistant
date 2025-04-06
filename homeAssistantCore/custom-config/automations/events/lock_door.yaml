@@ -1,5 +1,5 @@
-id: lock:door
-alias: Lock dorrs
+id: lock_door
+alias: Lock dors
 trigger:
   platform: event
   event_type: mobile_app_notification_action

@@ -22,6 +22,18 @@ views:
         show_name: true
         show_state: false
         show_icon: true
+        entity: light.all_lights
+        name: Reset Lights
+        show_entity_picture: false
+        tap_action:
+          action: perform-action
+          perform_action: scene.turn_on
+          target:
+            entity_id: scene.reset_light
+      - type: entity
+        show_name: true
+        show_state: false
+        show_icon: true
         entity: button.door_buzzer
         tap_action:
           action: toggle
@@ -65,6 +77,14 @@ views:
       - type: vertical-stack
         cards:
           - type: custom:mushroom-light-card
+            entity: light.all_lights
+            fill_container: false
+            show_brightness_control: true
+            use_light_color: true
+            show_color_control: false
+            show_color_temp_control: false
+            collapsible_controls: true
+          - type: custom:mushroom-light-card
             entity: light.living_room_lights
             show_brightness_control: true
             use_light_color: true
@@ -84,14 +104,6 @@ views:
             entity: light.bathroom_lights
             show_brightness_control: true
             use_light_color: true
-            collapsible_controls: true
-          - type: custom:mushroom-light-card
-            entity: light.all_lights
-            fill_container: false
-            show_brightness_control: true
-            use_light_color: true
-            show_color_control: false
-            show_color_temp_control: false
             collapsible_controls: true
         title: Lights
       - type: vertical-stack
@@ -140,22 +152,6 @@ views:
               - play_pause_stop
               - next
               - repeat
-          - type: custom:mushroom-media-player-card
-            entity: media_player.jarvis
-            volume_controls:
-              - volume_mute
-              - volume_set
-              - volume_buttons
-            show_volume_level: true
-            use_media_info: true
-            media_controls:
-              - previous
-              - play_pause_stop
-              - next
-              - repeat
-              - shuffle
-              - on_off
-        title: Media Controls
   - type: sidebar
     path: unifi
     title: Unifi
