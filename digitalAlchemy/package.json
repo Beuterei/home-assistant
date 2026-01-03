@@ -1,0 +1,28 @@
+{
+  "name": "@beuluis/digital-alchemy",
+  "version": "0.0.0",
+  "description": "Digital Alchemy service using Bun and Node.js",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --outdir=dist --platform=node --packages=external --format=esm",
+    "start": "node dist/index.js",
+    "type-writer": "type-writer",
+    "postinstall": "sed -i \"s|dayjs/plugin/duration|dayjs/plugin/duration.js|g; s|dayjs/plugin/isBetween|dayjs/plugin/isBetween.js|g\" ./node_modules/@digital-alchemy/automation/dist/index.mjs"
+  },
+  "author": "Luis Beu <me@luisbeu.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@digital-alchemy/automation": "25.8.3",
+    "@digital-alchemy/core": "25.8.1",
+    "@digital-alchemy/hass": "25.8.11",
+    "@digital-alchemy/synapse": "25.8.11"
+  },
+  "devDependencies": {
+    "@digital-alchemy/type-writer": "25.7.26",
+    "@types/node": "22.17.2",
+    "esbuild": "0.25.9",
+    "tsx": "4.20.4",
+    "typescript": "5.9.2"
+  }
+}

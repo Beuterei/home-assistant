@@ -14,8 +14,8 @@ action:
     then:
       - service: light.turn_on
         target:
-          area_id: living_room
+          entity_id: light.living_room_lights
     else:
       - service: light.turn_off
         target:
-          area_id: living_room
+          entity_id: light.living_room_lights

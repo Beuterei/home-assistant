@@ -59,7 +59,9 @@ This is my personal home assistant setup so it probably won't have much use for 
 
 9. Add all `ESP Home` intregrations listed [here](https://github.com/Beuterei/esp-home#projects). The hostname is the project name
 
-10. Add all desired autodiscovered integrations:
+10. Add `digital-alchemy` user and create a long live token and add it to env.
+
+11. Add all desired autodiscovered integrations:
 
 - Google Cast
 
@@ -91,11 +93,11 @@ This is my personal home assistant setup so it probably won't have much use for 
   | `Track network devices (Ubiquiti devices)` | `false`  |
   | `...`                                      | Defaults |
 
-11. Add all devices to areas
+12. Add all devices to areas
 
-12. Restart that `homeassistant` configurations take effect
+13. Restart that `homeassistant` configurations take effect
 
-13. Configure persons to your liking:
+14. Configure persons to your liking:
 
 - Profile picture
 
@@ -105,11 +107,11 @@ This is my personal home assistant setup so it probably won't have much use for 
 
   - `device_tracker.oneplus5`
 
-14. delete unused areas
+15. delete unused areas
 
-15. Setup [Google Assistant](https://www.nabucasa.com/config/google_assistant/)
+16. Setup [Google Assistant](https://www.nabucasa.com/config/google_assistant/)
 
-16. Setup BLE devices
+17. Setup BLE devices
 
 ## Customization
 
@@ -135,7 +137,8 @@ touch .env
 | `ZIGBEE_USB_DEVICE`      | USB Zigbee dongle                                                                                                                                          | `/dev/ttyACM0`      | false    |
 | `LATITUDE`               | [See](https://www.home-assistant.io/docs/configuration/basic/)                                                                                             | none                | true     |
 | `LONGITUDE`              | [See](https://www.home-assistant.io/docs/configuration/basic/)                                                                                             | none                | true     |
-| `MQTT_PASSWORD`     | MQTT broker password                                                                                                                                       | none                | true     |
+| `MQTT_PASSWORD`          | MQTT broker password                                                                                                                                       | none                | true     |
+| `HASS_TOKEN`             | HomeAssistant Long Live Token token                                                                                                                        | none                | true     |
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

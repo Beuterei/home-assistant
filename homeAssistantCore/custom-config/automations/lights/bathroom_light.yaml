@@ -6,4 +6,4 @@ trigger:
 action:
   service: light.toggle
   target:
-    area_id: bathroom
+    entity_id: light.bathroom_lights

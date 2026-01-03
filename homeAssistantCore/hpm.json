@@ -1,0 +1,72 @@
+{
+  "piitaya/lovelace-mushroom": {
+    "ref": "v4.2.1",
+    "refType": "tag",
+    "category": "plugin",
+    "hacsConfig": {
+      "name": "Mushroom",
+      "filename": "mushroom.js"
+    },
+    "releaseUrl": "https://github.com/piitaya/lovelace-mushroom/releases/download/v4.2.1/mushroom.js",
+    "localReferences": [
+      "mushroom.js"
+    ]
+  },
+  "thomasloven/lovelace-auto-entities": {
+    "ref": "v1.13.0",
+    "refType": "tag",
+    "category": "plugin",
+    "hacsConfig": {
+      "name": "auto-entities"
+    },
+    "remoteFiles": [
+      "auto-entities.js"
+    ]
+  },
+  "kalkih/mini-graph-card": {
+    "ref": "v0.12.1",
+    "refType": "tag",
+    "category": "plugin",
+    "hacsConfig": {
+      "name": "mini-graph-card"
+    },
+    "releaseUrl": "https://github.com/kalkih/mini-graph-card/releases/download/v0.12.1/mini-graph-card-bundle.js",
+    "localReferences": [
+      "mini-graph-card-bundle.js"
+    ]
+  },
+  "Digital-Alchemy-TS/synapse-extension": {
+    "ref": "v24.12.1",
+    "refType": "tag",
+    "category": "integration",
+    "hacsConfig": {
+      "name": "Digital Alchemy Synapse"
+    },
+    "remoteFiles": [
+      "custom_components/synapse/synapse/base_entity.py",
+      "custom_components/synapse/synapse/bridge.py",
+      "custom_components/synapse/synapse/const.py",
+      "custom_components/synapse/synapse/device.py",
+      "custom_components/synapse/synapse/helpers.py",
+      "custom_components/synapse/translations/en.json",
+      "custom_components/synapse/__init__.py",
+      "custom_components/synapse/binary_sensor.py",
+      "custom_components/synapse/button.py",
+      "custom_components/synapse/climate.py",
+      "custom_components/synapse/config_flow.py",
+      "custom_components/synapse/date.py",
+      "custom_components/synapse/datetime.py",
+      "custom_components/synapse/health.py",
+      "custom_components/synapse/lock.py",
+      "custom_components/synapse/manifest.json",
+      "custom_components/synapse/number.py",
+      "custom_components/synapse/scene.py",
+      "custom_components/synapse/select.py",
+      "custom_components/synapse/sensor.py",
+      "custom_components/synapse/services.yaml",
+      "custom_components/synapse/switch.py",
+      "custom_components/synapse/text.py",
+      "custom_components/synapse/time.py"
+    ]
+  }
+}

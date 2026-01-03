@@ -1,5 +1,4 @@
 version: "3.7"
-
 services:
   postgres:
     image: postgres:14.2-alpine
@@ -52,7 +51,8 @@ services:
       - homeassistant
 
   home-assistant:
-    image: homeassistant/home-assistant:2025.3
+    build:
+      context: homeAssistantCore
     container_name: homeAssistantCore
     restart: unless-stopped
     volumes:
@@ -60,12 +60,12 @@ services:
       - ./homeAssistantCore/configuration.yaml:/config/configuration.yaml
       - ./homeAssistantCore/ui-lovelace.yaml:/config/ui-lovelace.yaml
       - ./homeAssistantCore/custom-config/:/config/custom-config/
-      - ./homeAssistantCore/www/:/config/www/
     environment:
       TZ: Europe/Berlin
       DB_CONNECTION: postgresql://${POSTGRES_USER-homeAssistantCore}:${POSTGRES_PASSWORD:?Missing environment variable see readme}@postgres:5432/${POSTGRES_DB-homeAssistantCore}
       LATITUDE: ${LATITUDE:?Missing environment variable see readme}
       LONGITUDE: ${LONGITUDE:?Missing environment variable see readme}
+      HPM_GITHUB_TOKEN: ${GITHUB_TOKEN:?Missing environment variable see readme}
     ports:
       - 8123:8123
     networks:
@@ -87,6 +87,21 @@ services:
       homeassistant:
       dockervlan:
         ipv4_address: ${MDNS_REFLECTOR_IP:?Missing environment variable see readme}
+
+  # digital-alchemy:
+  #   build:
+  #     context: digitalAlchemy
+  #   container_name: digitalAlchemy
+  #   restart: unless-stopped
+  #   volumes:
+  #     - ./digitalAlchemy/src/:/app/src/
+  #   environment:
+  #     HASS_BASE_URL: http://home-assistant:8123
+  #     HASS_TOKEN: ${HASS_TOKEN:?Missing environment variable see readme}
+  #   depends_on:
+  #     - home-assistant
+  #   networks:
+  #     - homeassistant
 
 volumes:
   postgresqlData:
