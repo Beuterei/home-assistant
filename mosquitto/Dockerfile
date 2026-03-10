@@ -1,4 +1,4 @@
-FROM eclipse-mosquitto:2.0
+FROM eclipse-mosquitto:2.1-alpine
 ARG MQTT_PASSWORD
 
 RUN touch /mosquitto/passwd

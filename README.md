@@ -123,22 +123,24 @@ touch .env
 
 2. Overwrite variables as you like (format: `{variable name}={variable value}`)
 
-| Variable                 | Description                                                                                                                                                | Default value       | Required |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------- |
-| `POSTGRES_USER`          | Postgres user                                                                                                                                              | `homeAssistantCore` | false    |
-| `POSTGRES_PASSWORD`      | Postgres password                                                                                                                                          | none                | true     |
-| `POSTGRES_DB`            | Postgres DB name                                                                                                                                           | `homeAssistantCore` | false    |
-| `HOME_ASSISTANT_IP`      | Ip of the home assistant instance matching to `SUBNET`                                                                                                     | none                | true     |
-| `MDNS_REFLECTOR_IP`      | Ip of the mDNS reflector matching to `SUBNET`                                                                                                              | none                | true     |
-| `LAN_NETWORK_DEVICE`     | Network device to use for macvlan driver                                                                                                                   | none                | true     |
-| `SUBNET`                 | Subnet for host network                                                                                                                                    | none                | true     |
-| `ZIGBEE_KEY`             | See [Change Zigbee network encryption key](https://www.zigbee2mqtt.io/advanced/zigbee/03_secure_network.html#change-zigbee-network-encryption-key)         | none                | true     |
+| Variable                 | Description                                                                                                                       | Default value       | Required |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- | ------------------- | -------- |
+| `POSTGRES_USER`          | Postgres user                                                                                                                     | `homeAssistantCore` | false    |
+| `POSTGRES_PASSWORD`      | Postgres password                                                                                                                 | none                | true     |
+| `POSTGRES_DB`            | Postgres DB name                                                                                                                  | `homeAssistantCore` | false    |
+| `HOME_ASSISTANT_IP`      | IP of the home assistant instance matching to `SUBNET`                                                                             | none                | true     |
+| `MDNS_REFLECTOR_IP`      | IP of the mDNS reflector matching to `SUBNET`                                                                                     | none                | true     |
+| `LAN_NETWORK_DEVICE`     | Network device to use for macvlan driver                                                                                          | none                | true     |
+| `SUBNET`                 | Subnet for host network                                                                                                           | none                | true     |
+| `GATEWAY`                | LAN gateway/router IP (needed for macvlan containers to reach the internet)                                                      | none                | true     |
+| `ZIGBEE_KEY`             | See [Change Zigbee network encryption key](https://www.zigbee2mqtt.io/advanced/zigbee/03_secure_network.html#change-zigbee-network-encryption-key) | none                | true     |
 | `ZIGBEE2MQTT_AUTH_TOKEN` | Auth token for the Zigbee2MQTT frontend. See [advanced-configuration](https://www.zigbee2mqtt.io/guide/configuration/frontend.html#advanced-configuration) | none                | true     |
-| `ZIGBEE_USB_DEVICE`      | USB Zigbee dongle                                                                                                                                          | `/dev/ttyACM0`      | false    |
-| `LATITUDE`               | [See](https://www.home-assistant.io/docs/configuration/basic/)                                                                                             | none                | true     |
-| `LONGITUDE`              | [See](https://www.home-assistant.io/docs/configuration/basic/)                                                                                             | none                | true     |
-| `MQTT_PASSWORD`          | MQTT broker password                                                                                                                                       | none                | true     |
-| `HASS_TOKEN`             | HomeAssistant Long Live Token token                                                                                                                        | none                | true     |
+| `ZIGBEE_USB_DEVICE`      | USB Zigbee dongle                                                                                                                 | `/dev/ttyACM0`      | false    |
+| `LATITUDE`               | [See](https://www.home-assistant.io/docs/configuration/basic/)                                                                   | none                | true     |
+| `LONGITUDE`              | [See](https://www.home-assistant.io/docs/configuration/basic/)                                                                   | none                | true     |
+| `MQTT_PASSWORD`          | MQTT broker password                                                                                                              | none                | true     |
+| `GITHUB_TOKEN`           | GitHub token used by [hpm](https://github.com/Beuterei/hacs-package-manager) to fetch dependencies                               | none                | true     |
+| `HASS_TOKEN`             | HomeAssistant Long Live Token token                                                                                               | none                | true     |
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

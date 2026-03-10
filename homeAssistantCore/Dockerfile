@@ -1,4 +1,4 @@
-FROM homeassistant/home-assistant:2025.8
+FROM homeassistant/home-assistant:2026.3
 
 COPY entrypoint.sh hpm.json /
 

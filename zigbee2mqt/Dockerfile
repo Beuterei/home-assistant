@@ -1,7 +1,4 @@
-FROM koenkk/zigbee2mqtt:2.1
-
-# Copy to prevent zigbee2mqtt to leak my passwords... Gets copied by the entrypoint script to override it in the volume
-COPY ./config/configuration.yaml /tmp/config/
+FROM koenkk/zigbee2mqtt:2.9
 
 COPY ./custom-docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/custom-docker-entrypoint.sh

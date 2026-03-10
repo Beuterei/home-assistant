@@ -1,12 +1,16 @@
-homeassistant: true
+homeassistant:
+  enabled: true
+frontend:
+  enabled: true
+  auth_token: '!secret.yaml frontend_auth_token'
+advanced:
+  network_key: '!secret.yaml network_key'
 mqtt:
   user: mqtt
+  password: '!secret.yaml mqtt_password'
   base_topic: zigbee2mqtt
   server: mqtt://eclipse-mosquitto
-serial:
-  port: /dev/ttyACM0
 devices:
-  # Thermostats
   '0x44e2f8fffe239e10':
     friendly_name: Living Room Thermostat
   '0x44e2f8fffe33a949':
@@ -17,14 +21,10 @@ devices:
     friendly_name: Bathroom Thermostat
   '0x44e2f8fffe27efaf':
     friendly_name: Toilet Thermostat
-
-  # Heaters
   '0xc4988600000f774f':
     friendly_name: Living Room Heater
   '0xc4988600000f9b7b':
     friendly_name: Bedroom Heater
-
-  # Lights
   '0x00178801067afd51':
     friendly_name: Living Room Dining Table Light
   '0x00178801093da33f':
@@ -41,8 +41,6 @@ devices:
     friendly_name: Bedroom Desk Backlight
   '0x001788010e311547':
     friendly_name: Kitchen Workbench Light
-
-  # Switches
   '0x0000000001739bb6':
     friendly_name: Living Room Switch
   '0x001788010cc3328c':
@@ -53,25 +51,22 @@ devices:
     friendly_name: Bathroom Switch
   '0x001788010cc3328d':
     friendly_name: Kitchen Switch
-
-  # Windows
   '0x00158d0008d9423c':
     friendly_name: Living Room Window
   '0x00158d000891f691':
     friendly_name: Bedroom Window
-
-  # Buttons
   '0x00178801089632dc':
     friendly_name: Bedroom Workbench Button
   '0x00158d0009f50653':
     friendly_name: One Button To Rule Them All
-
-  # Sockets
   '0xa4c1380991781f75':
     friendly_name: Bathroom Washing Machine Socket
-
-  # Leak sensor
+  '0xa4c13844a7381525':
+    friendly_name: Bedroom Desk Plant
   '0x842712fffe825860':
     friendly_name: Leak Kitchen
-  '0x842712fffe825861':
+  '0x842712fffe7b61af':
     friendly_name: Leak Bathroom
+  '0xa4c138aedd4100d7':
+    friendly_name: '0xa4c138aedd4100d7'
+version: 5

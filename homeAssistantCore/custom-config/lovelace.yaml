@@ -1,5 +1,11 @@
-mode: yaml
+resource_mode: yaml
 dashboards:
+  overview-dashboard:
+    mode: yaml
+    title: Overview
+    icon: mdi:view-dashboard
+    show_in_sidebar: true
+    filename: ui-lovelace.yaml
   rooms-dashboard:
     mode: yaml
     title: Rooms
