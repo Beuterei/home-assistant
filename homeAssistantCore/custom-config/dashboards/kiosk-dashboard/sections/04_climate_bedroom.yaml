@@ -1,0 +1,35 @@
+type: grid
+column_span: 1
+cards:
+  - type: heading
+    heading_style: title
+    heading: Bedroom
+    icon: mdi:bed
+    grid_options:
+      columns: full
+      rows: 1
+  - type: custom:mushroom-climate-card
+    entity: climate.bedroom
+    show_temperature_control: true
+    hvac_modes:
+      - heat
+      - 'off'
+    fill_container: true
+    grid_options:
+      columns: full
+  - type: custom:mini-graph-card
+    line_color: red
+    entities:
+      - entity: sensor.bedroom_thermostat_temperature
+    fill_container: true
+    grid_options:
+      columns: 6
+      rows: 2.65
+  - type: custom:mini-graph-card
+    line_color: blue
+    entities:
+      - entity: sensor.bedroom_thermostat_humidity
+    fill_container: true
+    grid_options:
+      columns: 6
+      rows: 2.65

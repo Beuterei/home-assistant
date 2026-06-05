@@ -12,10 +12,20 @@ dashboards:
     icon: mdi:home
     show_in_sidebar: true
     filename: custom-config/dashboards/rooms-dashboard/rooms-dashboard.yaml
+  kiosk-dashboard:
+    mode: yaml
+    title: Kiosk
+    icon: mdi:tablet-dashboard
+    show_in_sidebar: false
+    filename: custom-config/dashboards/kiosk-dashboard/kiosk-dashboard.yaml
 resources:
   - url: /local/community/mushroom.js
     type: module
   - url: /local/community/mini-graph-card-bundle.js
     type: module
   - url: /local/community/auto-entities.js
+    type: module
+  - url: /local/community/kiosk-mode.js
+    type: module
+  - url: /local/custom/kiosk-scroll-indicator.js
     type: module

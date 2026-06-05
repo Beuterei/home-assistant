@@ -60,12 +60,14 @@ services:
       - ./homeAssistantCore/configuration.yaml:/config/configuration.yaml
       - ./homeAssistantCore/ui-lovelace.yaml:/config/ui-lovelace.yaml
       - ./homeAssistantCore/custom-config/:/config/custom-config/
+      - ./homeAssistantCore/www/custom/:/config/www/custom/
     environment:
       TZ: Europe/Berlin
       DB_CONNECTION: postgresql://${POSTGRES_USER-homeAssistantCore}:${POSTGRES_PASSWORD:?Missing environment variable see readme}@postgres:5432/${POSTGRES_DB-homeAssistantCore}
       LATITUDE: ${LATITUDE:?Missing environment variable see readme}
       LONGITUDE: ${LONGITUDE:?Missing environment variable see readme}
       HPM_GITHUB_TOKEN: ${GITHUB_TOKEN:?Missing environment variable see readme}
+      DOOR_BUZZER_WEBHOOK_ID: ${DOOR_BUZZER_WEBHOOK_ID:?Missing environment variable see readme}
     ports:
       - 8123:8123
     networks:

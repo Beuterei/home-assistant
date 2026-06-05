@@ -1,0 +1,39 @@
+id: bed_occupied_brush_reminder
+alias: Bed Occupied Brush Reminder
+trigger:
+  - platform: state
+    entity_id: binary_sensor.bed_tracker_bed_tracker_occupied
+    to: "on"
+condition:
+  - condition: or
+    conditions:
+      - condition: time
+        after: "22:00:00"
+      - condition: time
+        before: "06:00:00"
+  - condition: template
+    value_template: "{{ states('sensor.max_brush_time_last_12h') | float(0) < 120 }}"
+  - condition: template
+    value_template: >
+      {% set last = state_attr('automation.bed_occupied_brush_reminder', 'last_triggered') %}
+      {{ last is none or (as_timestamp(now()) - as_timestamp(last)) > 600 }}
+action:
+  - service: media_player.volume_set
+    target:
+      entity_id: media_player.kiosk
+    data:
+      volume_level: 1
+  - service: media_player.play_media
+    target:
+      entity_id: media_player.kiosk
+    data:
+      # TODO: use template IP address
+      media_content_id: http://192.168.1.14:8123/local/custom/notify.mp3
+      media_content_type: music
+  - service: notify.mobile_app_luis_handy
+    data:
+      title: Brush your teeth
+      message: Brush your teeth, you filthy idiot <3
+      data:
+        ttl: 0
+        priority: high

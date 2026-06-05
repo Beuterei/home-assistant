@@ -1,0 +1,142 @@
+type: grid
+column_span: 2
+cards:
+  - type: horizontal-stack
+    grid_options:
+      columns: full
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: heading
+            heading_style: title
+            heading: Living Room
+            icon: mdi:sofa
+          - type: custom:mushroom-light-card
+            entity: light.living_room_lights
+            name: All Living Room
+            show_brightness_control: true
+            use_light_color: true
+            collapsible_controls: false
+            fill_container: true
+          - type: custom:mushroom-light-card
+            entity: light.living_room_dining_table_light
+            name: Dining Table
+            show_brightness_control: true
+            show_color_control: true
+            show_color_temp_control: true
+            use_light_color: true
+            collapsible_controls: true
+            fill_container: true
+          - type: custom:mushroom-light-card
+            entity: light.living_room_coffee_table_light
+            name: Coffee Table
+            show_brightness_control: true
+            show_color_control: true
+            show_color_temp_control: true
+            use_light_color: true
+            collapsible_controls: true
+            fill_container: true
+          - type: custom:mushroom-light-card
+            entity: light.emergency_exit_sign
+            name: Emergency Exit
+            show_brightness_control: true
+            show_color_control: true
+            show_color_temp_control: true
+            use_light_color: true
+            collapsible_controls: true
+            fill_container: true
+          - type: custom:mushroom-light-card
+            entity: light.treehouse_light
+            name: Treehouse
+            show_brightness_control: true
+            show_color_control: true
+            show_color_temp_control: true
+            use_light_color: true
+            collapsible_controls: true
+            fill_container: true
+      - type: vertical-stack
+        cards:
+          - type: heading
+            heading_style: title
+            heading: Bedroom
+            icon: mdi:bed
+          - type: custom:mushroom-light-card
+            entity: light.bedroom_lights
+            name: All Bedroom
+            show_brightness_control: true
+            use_light_color: true
+            collapsible_controls: false
+            fill_container: true
+          - type: custom:mushroom-light-card
+            entity: light.bedroom_light
+            name: Main Light
+            show_brightness_control: true
+            show_color_control: true
+            show_color_temp_control: true
+            use_light_color: true
+            collapsible_controls: true
+            fill_container: true
+          - type: custom:mushroom-light-card
+            entity: light.bedroom_desk_backlight
+            name: Desk Backlight
+            show_brightness_control: true
+            show_color_control: true
+            show_color_temp_control: true
+            use_light_color: true
+            collapsible_controls: true
+            fill_container: true
+          - type: custom:mushroom-light-card
+            entity: light.bedroom_workbench_light
+            name: Workbench
+            show_brightness_control: true
+            show_color_control: true
+            show_color_temp_control: true
+            use_light_color: true
+            collapsible_controls: true
+            fill_container: true
+      - type: vertical-stack
+        cards:
+          - type: heading
+            heading_style: title
+            heading: Kitchen
+            icon: mdi:fridge
+          - type: custom:mushroom-light-card
+            entity: light.kitchen_lights
+            name: All Kitchen
+            show_brightness_control: true
+            use_light_color: true
+            collapsible_controls: false
+            fill_container: true
+          - type: custom:mushroom-light-card
+            entity: light.kitchen_light
+            name: Main Light
+            show_brightness_control: true
+            show_color_control: true
+            show_color_temp_control: true
+            use_light_color: true
+            collapsible_controls: true
+            fill_container: true
+          - type: custom:mushroom-light-card
+            entity: light.kitchen_workbench_light
+            name: Workbench
+            show_brightness_control: true
+            show_color_control: true
+            show_color_temp_control: true
+            use_light_color: true
+            collapsible_controls: true
+            fill_container: true
+      - type: vertical-stack
+        cards:
+          - type: heading
+            heading_style: title
+            heading: Bathroom
+            icon: mdi:shower
+          - type: custom:mushroom-light-card
+            entity: light.bathroom_light
+            name: Bathroom Light
+            show_brightness_control: true
+            show_color_control: true
+            show_color_temp_control: true
+            use_light_color: true
+            collapsible_controls: true
+            fill_container: true

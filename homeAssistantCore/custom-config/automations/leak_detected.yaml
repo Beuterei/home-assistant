@@ -16,6 +16,19 @@ action:
         priority: high
         media_stream: alarm_stream_max
         tts_text: "A leak has been detected in area {{ area_name(trigger.entity_id) }}"
+  - service: switch.turn_on
+    target:
+      entity_id: switch.kiosk_bildschirm
+  - service: media_player.volume_set
+    target:
+      entity_id: media_player.kiosk
+    data:
+      volume_level: 1
+  - service: notify.send_message
+    target:
+      entity_id: notify.kiosk_text_zu_sprache
+    data:
+      message: "A leak has been detected in area {{ area_name(trigger.entity_id) }}"
   - service: notify.mobile_app_luis_handy
     data:
       title: "Leak Detected"

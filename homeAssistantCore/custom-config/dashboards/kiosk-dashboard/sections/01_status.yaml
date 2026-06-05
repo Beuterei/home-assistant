@@ -1,0 +1,106 @@
+type: grid
+column_span: 2
+cards:
+  - type: heading
+    heading_style: title
+    heading: Status
+    icon: mdi:information-outline
+    grid_options:
+      columns: full
+      rows: 1
+  - type: horizontal-stack
+    grid_options:
+      columns: full
+    cards:
+      - type: custom:mushroom-template-card
+        primary: Water Leak
+        secondary: >-
+          {{ 'Detected' if is_state('binary_sensor.leak_bathroom_water_leak',
+          'on') or is_state('binary_sensor.leak_kitchen_water_leak', 'on') else
+          'All dry' }}
+        icon: >-
+          {{ 'mdi:water-alert' if is_state('binary_sensor.leak_bathroom_water_leak',
+          'on') or is_state('binary_sensor.leak_kitchen_water_leak', 'on') else
+          'mdi:water-check' }}
+        icon_color: >-
+          {{ 'red' if is_state('binary_sensor.leak_bathroom_water_leak', 'on') or
+          is_state('binary_sensor.leak_kitchen_water_leak', 'on') else 'disabled' }}
+        layout: vertical
+        fill_container: true
+        tap_action:
+          action: none
+      - type: custom:mushroom-template-card
+        primary: Windows
+        secondary: "{{ 'Open' if is_state('binary_sensor.all_windows', 'on') else 'Closed' }}"
+        icon: >-
+          {{ 'mdi:window-open-variant' if is_state('binary_sensor.all_windows',
+          'on') else 'mdi:window-closed-variant' }}
+        icon_color: "{{ 'orange' if is_state('binary_sensor.all_windows', 'on') else 'disabled' }}"
+        layout: vertical
+        fill_container: true
+        tap_action:
+          action: none
+        entity: binary_sensor.all_windows
+      - type: custom:mushroom-template-card
+        primary: Front Door
+        secondary: "{{ 'Unlocked' if not is_state('lock.home_door', 'locked') else 'Locked' }}"
+        icon: "{{ 'mdi:lock-open-variant' if not is_state('lock.home_door', 'locked') else 'mdi:lock' }}"
+        icon_color: "{{ 'red' if not is_state('lock.home_door', 'locked') else 'disabled' }}"
+        layout: vertical
+        fill_container: true
+        tap_action:
+          action: more-info
+        entity: lock.home_door
+  - type: custom:auto-entities
+    show_empty: false
+    card:
+      type: entities
+      title: Water Leaks
+      state_color: true
+    filter:
+      include:
+        - entity_id: binary_sensor.leak_*_water_leak
+          state: "on"
+      exclude:
+        - state: unavailable
+        - state: unknown
+    sort:
+      method: name
+    grid_options:
+      columns: full
+  - type: custom:auto-entities
+    show_empty: false
+    card:
+      type: entities
+      state_color: true
+    filter:
+      include:
+        - entity_id: sensor.*battery
+          state: "< 20"
+      exclude:
+        - state: unavailable
+        - state: unknown
+    sort:
+      method: state
+      numeric: true
+    grid_options:
+      columns: full
+  - type: custom:auto-entities
+    show_empty: false
+    card:
+      type: entities
+      state_color: true
+    filter:
+      include:
+        - entity_id: binary_sensor.*update_available
+          state: "on"
+        - domain: update
+          state: "on"
+      exclude:
+        - integration: unifi
+        - state: unavailable
+        - state: unknown
+    sort:
+      method: name
+    grid_options:
+      columns: full

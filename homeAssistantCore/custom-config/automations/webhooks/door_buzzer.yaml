@@ -1,0 +1,12 @@
+id: door_buzzer
+alias: Door Buzzer
+trigger:
+  platform: webhook
+  webhook_id: !env_var DOOR_BUZZER_WEBHOOK_ID
+  allowed_methods:
+    - POST
+  local_only: false
+action:
+  - service: button.press
+    target:
+      entity_id: button.door_buzzer

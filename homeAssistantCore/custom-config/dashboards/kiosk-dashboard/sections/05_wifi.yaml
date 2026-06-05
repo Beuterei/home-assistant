@@ -1,0 +1,32 @@
+type: grid
+column_span: 2
+cards:
+  - type: heading
+    heading_style: title
+    heading: WiFi
+    icon: mdi:wifi
+    grid_options:
+      columns: full
+      rows: 1
+  - type: horizontal-stack
+    grid_options:
+      columns: full
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: heading
+            heading: WinternetIsComing
+            heading_style: subtitle
+          - type: picture-entity
+            entity: image.winternetiscoming_qr_code
+            show_name: false
+            show_state: false
+      - type: vertical-stack
+        cards:
+          - type: heading
+            heading: WinternetIsComing 6GHZ
+            heading_style: subtitle
+          - type: picture-entity
+            entity: image.winternetiscoming6ghz_qr_code
+            show_name: false
+            show_state: false

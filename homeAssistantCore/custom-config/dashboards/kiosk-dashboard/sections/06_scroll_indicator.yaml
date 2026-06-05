@@ -1,0 +1,8 @@
+type: grid
+column_span: 2
+cards:
+  - type: custom:kiosk-scroll-indicator
+    icon: mdi:chevron-down
+    grid_options:
+      columns: full
+      rows: 1

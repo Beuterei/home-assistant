@@ -141,6 +141,7 @@ touch .env
 | `MQTT_PASSWORD`          | MQTT broker password                                                                                                              | none                | true     |
 | `GITHUB_TOKEN`           | GitHub token used by [hpm](https://github.com/Beuterei/hacs-package-manager) to fetch dependencies                               | none                | true     |
 | `HASS_TOKEN`             | HomeAssistant Long Live Token token                                                                                               | none                | true     |
+| `DOOR_BUZZER_WEBHOOK_ID` | Webhook ID used to trigger the door buzzer automation. Treat as a secret since the webhook has no further authentication.        | none                | true     |
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

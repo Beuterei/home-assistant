@@ -68,5 +68,17 @@
       "custom_components/synapse/text.py",
       "custom_components/synapse/time.py"
     ]
+  },
+  "NemesisRE/kiosk-mode": {
+    "ref": "v13.1.0",
+    "refType": "tag",
+    "category": "plugin",
+    "hacsConfig": {
+      "name": "Kiosk Mode",
+      "filename": "kiosk-mode.js"
+    },
+    "remoteFiles": [
+      "dist/kiosk-mode.js"
+    ]
   }
 }
