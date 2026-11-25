@@ -68,5 +68,9 @@ devices:
   '0x842712fffe7b61af':
     friendly_name: Leak Bathroom
   '0xa4c138aedd4100d7':
-    friendly_name: '0xa4c138aedd4100d7'
+    friendly_name: Present Detector
+  '0x001788010fb0331d':
+    friendly_name: Living Room Couch Light
+  '0x00158d008c746459':
+    friendly_name: Living Room Couch Switch
 version: 5

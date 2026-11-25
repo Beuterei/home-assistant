@@ -3,6 +3,7 @@
   entities:
     - light.living_room_dining_table_light
     - light.living_room_coffee_table_light
+    - light.living_room_couch_light
     - light.bedroom_light
     - light.bedroom_workbench_light
     - light.bedroom_desk_backlight
@@ -17,6 +18,7 @@
   entities:
     - light.living_room_dining_table_light
     - light.living_room_coffee_table_light
+    - light.living_room_couch_light
     - light.emergency_exit_sign
     - light.treehouse_light
 

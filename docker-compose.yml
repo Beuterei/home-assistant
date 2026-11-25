@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:14.2-alpine
+    image: postgres:14.24-alpine
     container_name: homeAssistantPostgresql
     restart: unless-stopped
     environment:
@@ -90,20 +90,20 @@ services:
       dockervlan:
         ipv4_address: ${MDNS_REFLECTOR_IP:?Missing environment variable see readme}
 
-  # digital-alchemy:
-  #   build:
-  #     context: digitalAlchemy
-  #   container_name: digitalAlchemy
-  #   restart: unless-stopped
-  #   volumes:
-  #     - ./digitalAlchemy/src/:/app/src/
-  #   environment:
-  #     HASS_BASE_URL: http://home-assistant:8123
-  #     HASS_TOKEN: ${HASS_TOKEN:?Missing environment variable see readme}
-  #   depends_on:
-  #     - home-assistant
-  #   networks:
-  #     - homeassistant
+  digital-alchemy:
+    build:
+      context: digitalAlchemy
+    container_name: digitalAlchemy
+    #restart: unless-stopped
+    volumes:
+      - ./digitalAlchemy/src/:/app/src/
+    environment:
+      HASS_BASE_URL: http://home-assistant:8123
+      HASS_TOKEN: ${HASS_TOKEN:?Missing environment variable see readme}
+    depends_on:
+      - home-assistant
+    networks:
+      - homeassistant
 
 volumes:
   postgresqlData:

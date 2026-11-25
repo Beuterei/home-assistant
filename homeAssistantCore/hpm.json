@@ -1,19 +1,19 @@
 {
   "piitaya/lovelace-mushroom": {
-    "ref": "v4.2.1",
+    "ref": "v5.2.2",
     "refType": "tag",
     "category": "plugin",
     "hacsConfig": {
       "name": "Mushroom",
       "filename": "mushroom.js"
     },
-    "releaseUrl": "https://github.com/piitaya/lovelace-mushroom/releases/download/v4.2.1/mushroom.js",
+    "releaseUrl": "https://github.com/piitaya/lovelace-mushroom/releases/download/v5.2.2/mushroom.js",
     "localReferences": [
       "mushroom.js"
     ]
   },
   "thomasloven/lovelace-auto-entities": {
-    "ref": "v1.13.0",
+    "ref": "v1.16.1",
     "refType": "tag",
     "category": "plugin",
     "hacsConfig": {
@@ -24,19 +24,19 @@
     ]
   },
   "kalkih/mini-graph-card": {
-    "ref": "v0.12.1",
+    "ref": "v0.13.0",
     "refType": "tag",
     "category": "plugin",
     "hacsConfig": {
       "name": "mini-graph-card"
     },
-    "releaseUrl": "https://github.com/kalkih/mini-graph-card/releases/download/v0.12.1/mini-graph-card-bundle.js",
+    "releaseUrl": "https://github.com/kalkih/mini-graph-card/releases/download/v0.13.0/mini-graph-card-bundle.js",
     "localReferences": [
       "mini-graph-card-bundle.js"
     ]
   },
   "Digital-Alchemy-TS/synapse-extension": {
-    "ref": "v24.12.1",
+    "ref": "v25.12.19",
     "refType": "tag",
     "category": "integration",
     "hacsConfig": {
@@ -66,11 +66,12 @@
       "custom_components/synapse/services.yaml",
       "custom_components/synapse/switch.py",
       "custom_components/synapse/text.py",
-      "custom_components/synapse/time.py"
+      "custom_components/synapse/time.py",
+      "custom_components/synapse/websocket.py"
     ]
   },
   "NemesisRE/kiosk-mode": {
-    "ref": "v13.1.0",
+    "ref": "v14.0.2",
     "refType": "tag",
     "category": "plugin",
     "hacsConfig": {
@@ -79,6 +80,59 @@
     },
     "remoteFiles": [
       "dist/kiosk-mode.js"
+    ]
+  },
+  "mill1000/midea-ac-py": {
+    "ref": "2026.8.2",
+    "refType": "tag",
+    "category": "integration",
+    "hacsConfig": {
+      "name": "Midea Smart AC"
+    },
+    "remoteFiles": [
+      "custom_components/midea_ac/__init__.py",
+      "custom_components/midea_ac/binary_sensor.py",
+      "custom_components/midea_ac/brand/icon.png",
+      "custom_components/midea_ac/button.py",
+      "custom_components/midea_ac/climate.py",
+      "custom_components/midea_ac/config_flow.py",
+      "custom_components/midea_ac/const.py",
+      "custom_components/midea_ac/coordinator.py",
+      "custom_components/midea_ac/device_proxy.py",
+      "custom_components/midea_ac/diagnostics.py",
+      "custom_components/midea_ac/fan.py",
+      "custom_components/midea_ac/icons.json",
+      "custom_components/midea_ac/manifest.json",
+      "custom_components/midea_ac/number.py",
+      "custom_components/midea_ac/select.py",
+      "custom_components/midea_ac/sensor.py",
+      "custom_components/midea_ac/services.yaml",
+      "custom_components/midea_ac/switch.py",
+      "custom_components/midea_ac/translations/bg.json",
+      "custom_components/midea_ac/translations/ca.json",
+      "custom_components/midea_ac/translations/cs.json",
+      "custom_components/midea_ac/translations/de.json",
+      "custom_components/midea_ac/translations/en.json",
+      "custom_components/midea_ac/translations/es.json",
+      "custom_components/midea_ac/translations/eu.json",
+      "custom_components/midea_ac/translations/fr.json",
+      "custom_components/midea_ac/translations/hr.json",
+      "custom_components/midea_ac/translations/hu.json",
+      "custom_components/midea_ac/translations/it.json",
+      "custom_components/midea_ac/translations/ko.json",
+      "custom_components/midea_ac/translations/mk.json",
+      "custom_components/midea_ac/translations/nb.json",
+      "custom_components/midea_ac/translations/nl.json",
+      "custom_components/midea_ac/translations/pl.json",
+      "custom_components/midea_ac/translations/pt.json",
+      "custom_components/midea_ac/translations/ro.json",
+      "custom_components/midea_ac/translations/ru.json",
+      "custom_components/midea_ac/translations/sk.json",
+      "custom_components/midea_ac/translations/sl.json",
+      "custom_components/midea_ac/translations/tr.json",
+      "custom_components/midea_ac/translations/uk.json",
+      "custom_components/midea_ac/translations/zh-Hans.json",
+      "custom_components/midea_ac/translations/zh-Hant.json"
     ]
   }
 }

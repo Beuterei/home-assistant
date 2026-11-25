@@ -42,6 +42,15 @@ cards:
       columns: 6
       rows: 2
   - type: custom:mushroom-light-card
+    entity: light.living_room_couch_light
+    name: Couch
+    use_light_color: true
+    show_brightness_control: true
+    fill_container: true
+    grid_options:
+      columns: 6
+      rows: 2
+  - type: custom:mushroom-light-card
     entity: light.emergency_exit_sign
     use_light_color: true
     show_brightness_control: true

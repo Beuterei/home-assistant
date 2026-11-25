@@ -37,6 +37,15 @@ cards:
             collapsible_controls: true
             fill_container: true
           - type: custom:mushroom-light-card
+            entity: light.living_room_couch_light
+            name: Couch
+            show_brightness_control: true
+            show_color_control: true
+            show_color_temp_control: true
+            use_light_color: true
+            collapsible_controls: true
+            fill_container: true
+          - type: custom:mushroom-light-card
             entity: light.emergency_exit_sign
             name: Emergency Exit
             show_brightness_control: true

@@ -6,6 +6,8 @@ homeassistant:
   time_zone: Europe/Berlin
   currency: EUR
   elevation: 532
+  country: DE
+  language: en
 
 default_config:
 

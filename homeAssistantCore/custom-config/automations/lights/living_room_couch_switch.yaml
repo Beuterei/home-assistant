@@ -1,0 +1,10 @@
+id: living_room_couch_switch
+alias: Living Room Couch Switch
+trigger:
+  platform: mqtt
+  topic: "zigbee2mqtt/Living Room Couch Switch/action"
+  payload: "single"
+action:
+  service: light.toggle
+  target:
+    entity_id: light.living_room_lights

@@ -1,4 +1,4 @@
-FROM koenkk/zigbee2mqtt:2.9
+FROM koenkk/zigbee2mqtt:2.13
 
 COPY ./custom-docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/custom-docker-entrypoint.sh

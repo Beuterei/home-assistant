@@ -1,0 +1,3 @@
+{
+    "typescript.tsdk": "./digitalAlchemy/node_modules/typescript/lib"
+}
